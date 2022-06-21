@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Materi;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class DashboardMateriController extends Controller
@@ -63,10 +64,10 @@ class DashboardMateriController extends Controller
         $course_id = new \stdClass();
         $course_id = $request->get('course_id');
         $validatedData = $request->validate([
-            'subject' => 'required|unique:materis',
+            'subject' => 'required',
             'course_id'=>'required',
             'link' => 'nullable|url',
-            'pdf' => 'mimes:pdf|max:2048'
+            'pdf' => 'nullable|mimes:pdf|max:2048'
             
         ]);
 
@@ -78,7 +79,7 @@ class DashboardMateriController extends Controller
 
         // return redirect()->route('dashboard.materi.index', compact('course_id'));
         
-        return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Materi baru telah ditambahkan');
+        return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Pertemuan baru telah ditambahkan');
         // return view('dashboard.materi.index', [
         //              'materi' => $materi,
         //              'course_id' => $course_id
@@ -103,9 +104,12 @@ class DashboardMateriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $materi = Materi::with('course')->where('id', $id)->first();
+        $course_id = new \stdClass();
+        $course_id = $request->get('course_id');
+        return view('dashboard.materi.edit', compact('materi', 'course_id'));
     }
 
     /**
@@ -117,7 +121,31 @@ class DashboardMateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $materi = Materi::all();
+        $course_id = new \stdClass();
+        $course_id = $request->get('course_id');
+        $request->validate([
+            'subject' => 'required',
+            'course_id'=>'required',
+            'link' => 'nullable|url',
+            'pdf' => 'nullable|mimes:pdf|max:2048'
+        ]);
+
+        $materi = Materi::where('id', $id)->first();
+        $materi->subject = $request->get('subject');
+        $materi->link = $request->get('link');
+
+        if($request->file('pdf')){
+            if($request->oldpdf){
+                Storage::delete($request->oldpdf);
+            }
+            $materi->pdf = $request->file('pdf')->store('course-doc');
+        }
+
+        $materi->save();
+
+        return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Pertemuan berhasil diedit');
     }
 
     /**
@@ -126,20 +154,18 @@ class DashboardMateriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        
+        $course_id = new \stdClass();
+        $course_id = $request->get('course_id');
+        $materi = Materi::where('id', $id)->first();
+        if($materi->pdf){
+            Storage::delete($materi->pdf);
+        }
+        $materi->delete();
+        return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Pertemuan telah dihapus');
     }
 
-    // public function indexMateri($id)
-    // {
-        
-    //     $materi = Materi::with('course')->where('course_id', $id)->first();
-    //     $course_id = new \stdClass();
-    //     $course_id = $id;
-    //     return view('dashboard.materi.index', [
-    //         'materi' => $materi,
-    //         'course_id' => $course_id
-    //     ]);
-    // }
+
 }
