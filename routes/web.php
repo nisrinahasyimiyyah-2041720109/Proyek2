@@ -3,6 +3,7 @@
 use App\Http\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardAdminController;
@@ -50,11 +51,11 @@ Route::resource('/admin/category', DashboardCategoryController::class)->middlewa
 Route::resource('/admin/course', DashboardCourseController::class)->middleware('checkRole:admin');
 Route::resource('/admin/materi', DashboardMateriController::class)->middleware('checkRole:admin');
 
-Route::get('/materi/{id}', [DashboardMateriController::class, 'indexMateri']);
+// Route::get('/materi/{id}', [DashboardMateriController::class, 'indexMateri']);
 
-// Route::resource('/admin/materi', 'DashboardMateriController', ['except' => ['index']])->middleware('checkRole:admin');
+Route::get('/course', [CourseController::class, 'index']);
 
-// Route::post('/admin/materi/{{$id}}', [DashboardMateriController::class, 'index'])->middleware('checkRole:admin');
+Route::get('/course/{id}', [courseController::class, 'show']);
 
 
 

@@ -31,4 +31,8 @@ class Course extends Model
     public function materi(){
         return $this->hasMany(Materi::class);
     }
+
+    public function transaksi(){
+        return $this->hasMany(Transaksi::class);
+    }
 }
