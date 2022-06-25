@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Transaksi;
 
 class CourseController extends Controller
 {
@@ -22,7 +23,7 @@ class CourseController extends Controller
     public function show($id){
         return view('courseDetail',[
            "title"=>"course",
-           'course' => Course::find($id)
+           'course' => Course::with('category')->with('materi')->find($id)
        ]);
    }
 }

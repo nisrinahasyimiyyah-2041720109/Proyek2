@@ -14,6 +14,7 @@ class Course extends Model
         'title',
         'deskripsi',
         'category_id',
+        'user_id',
         'requirment',
         'outcome',
         'harga',

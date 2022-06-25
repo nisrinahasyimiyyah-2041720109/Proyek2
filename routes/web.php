@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Models\User;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\CourseMemberController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardCourseController;
@@ -56,6 +59,15 @@ Route::resource('/admin/materi', DashboardMateriController::class)->middleware('
 Route::get('/course', [CourseController::class, 'index']);
 
 Route::get('/course/{id}', [courseController::class, 'show']);
+
+Route::resource('/transaksi', TransaksiController::class);
+
+Route::post('/bayar', [TransaksiController::class, 'bayar']);
+Route::get('/verifyTransaksi', [TransaksiController::class, 'verify']);
+
+Route::get('/courseMember', [CourseMemberController::class, 'index']);
+
+Route::get('/transaksiMember', [CourseMemberController::class, 'transaksi']);
 
 
 

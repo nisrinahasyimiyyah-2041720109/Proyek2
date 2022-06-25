@@ -13,15 +13,17 @@ class Transaksi extends Model
     protected $fillable = [
         'bukti',
         'user_id',
-        'course_id'
+        'course_id',
+        'verify'
     ];
+
+    public function course(){
+        return $this->belongsTo(Course::class, 'course_id');
+    }
 
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function course(){
-        return $this->belongsTo(Course::class);
-    }
-
+ 
 }

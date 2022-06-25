@@ -83,7 +83,7 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
           <i class="menu-icon mdi mdi-table"></i>
           <span class="menu-title">Tables</span>
@@ -106,17 +106,17 @@
             <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
           </ul>
         </div>
-      </li>
-      <li class="nav-item nav-category">pages</li>
+      </li> --}}
+      <li class="nav-item nav-category">Transaction</li>
       <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <a class="nav-link" data-bs-toggle="collapse" href="#trans" aria-expanded="false" aria-controls="trans">
           <i class="menu-icon mdi mdi-account-circle-outline"></i>
-          <span class="menu-title">User Pages</span>
+          <span class="menu-title">Transaction</span>
           <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="auth">
+        <div class="collapse" id="trans">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+            <li class="nav-item"> <a class="nav-link" href="/transaksi">Manage Transaction</a></li>
           </ul>
         </div>
       </li>

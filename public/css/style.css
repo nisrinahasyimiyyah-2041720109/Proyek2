@@ -28,6 +28,11 @@ body{
 	margin-top: 3%;
     margin-left: 20%;
 }
+
+.course{
+    background-color: rgba(255, 255, 255, 0.373);
+    border-radius: 15px;
+}
 /* 
 .contact h1{
     padding-top: 15px;

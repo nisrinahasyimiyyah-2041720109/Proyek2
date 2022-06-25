@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class= "nav-link {{ Request::is('course*') ? 'active' : '' }} "  href="/course"><i class="bi bi-book-half mx-2"></i>Courses</a>
+                <a class= "nav-link {{ Request::is('course') ? 'active' : '' }} "  href="/course"><i class="bi bi-book-half mx-2"></i>Courses</a>
                 </li>
                
             </ul>
@@ -18,7 +18,7 @@
                 @auth
                 @if(auth()->user()->role == 'member')
                 <li class="nav-item">
-                    <a class= "nav-link {{ Request::is('#') ? 'active' : '' }}"  href="#"><i class="bi bi-journal-text mx-2"></i>My Course</a>
+                    <a class= "nav-link {{ Request::is('courseMember') ? 'active' : '' }}"  href="/courseMember"><i class="bi bi-journal-text mx-2"></i>My Course</a>
                 </li>
                 <div class="vr" style="color :white; margin: 0px 8px 0px 8px;"></div>
                 @endif
@@ -30,7 +30,7 @@
                       @if(auth()->user()->role == 'admin')
                       <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-clipboard-minus"></i> My Dashboard</a></li>
                       @else
-                      <li><a class="dropdown-item" href="#"><i class="bi bi-menu-button-wide"></i> My Transaction</a></li>
+                      <li><a class="dropdown-item" href="/transaksiMember"><i class="bi bi-menu-button-wide"></i> My Transaction</a></li>
                       @endif
                       <li><hr class="dropdown-divider"></li>
                       <li>

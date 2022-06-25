@@ -19,6 +19,7 @@ class CreateTransaksisTable extends Migration
             $table->string('bukti')->nullable();
             $table->foreignId('user_id');
             $table->foreignId('course_id');
+            $table->integer('verify')->default(0);
         });
     }
 

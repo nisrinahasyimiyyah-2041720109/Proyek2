@@ -5,32 +5,47 @@
   <!-- Modal -->
   <div class="modal fade " id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+      <div class="hide modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="orderModalLabel">Pembayaran</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="hide modal-body">
+        <div class="modal-body">
           Terima kasih telah memesan, silahkan melakukan melakukan pembayaran
         </div>
-        <div class="purchase modal-body" style="display: none;">
-            Silahkan Mengirimkan bukti Transfer
-            <form action="">
-
-            </form>
-          </div>
-        <div class="hide modal-footer">
-            <form action="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Pay Later</button>
+        <div class="modal-footer">
+            <form method="post" action="/transaksi">
+              @csrf
+                <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Apakah anda yakin?')">Pay Later</button>
             </form>
              <button type="button" class="btn btn-primary" value="purchase" id="hide">Pay Now</button>
         </div>
-
-        <div class="purchase modal-footer" style="display: none;">
-            <form action="">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+      </div>
+      <div class="purchase modal-content" style="display: none;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderModalLabel">Pembayaran</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form method="post" action="/transaksi" enctype="multipart/form-data">
+          @csrf
+          <div class="modal-body">
+              Silahkan Mengirimkan bukti Transfer
+              <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
+              <div class="mb-3">
+                <img class="img-preview img-fluid my-3 col-sm-5">
+                <input class="form-control" type="file" id="bukti" name="bukti" onchange="previewImage()">
+                @error('bukti')
+                <div class="invalid-feedback">
+                {{ $message }}
+                </div>
+                @enderror
+              </div>
+            </div>
+          <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah anda yakin?')">Submit</button>
+          </div>
+      </form>
       </div>
     </div>
   </div>
@@ -53,7 +68,7 @@
                     <li class="list-group-item"><b>Outcome : </b>{{ $course->outcome }}</li>
                     <li class="list-group-item"><b>Deskripsi : </b>{{ $course->deskripsi }}</li>
                     <li class="list-group-item"><b>Harga : </b>Rp.{{ $course->harga }}</li>
-                    <li class="list-group-item"><b>Pertemuan : </b>kosong</li>
+                    <li class="list-group-item"><b>Pertemuan : </b>{{ $course->materi->count() }} Pertemuan</li>
             </div>
 
             <div class="card-footer text-muted">
@@ -77,6 +92,7 @@
     });
     </script>
 </div>
+
 
 
 
