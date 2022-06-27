@@ -32,7 +32,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#admin" aria-expanded="false" aria-controls="admin">
-          <i class="menu-icon mdi mdi-account"></i>
+          <i class="menu-icon mdi mdi-account-circle-outline"></i>
           <span class="menu-title">Admin</span>
           <i class="menu-arrow"></i>
         </a>
@@ -68,7 +68,7 @@
       </li> --}}
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#course" aria-expanded="false" aria-controls="charts">
-          <i class="menu-icon mdi mdi-chart-line"></i>
+          <i class="menu-icon mdi mdi-book-multiple"></i>
           <span class="menu-title">Course</span>
           <i class="menu-arrow"></i>
         </a>
@@ -110,7 +110,7 @@
       <li class="nav-item nav-category">Transaction</li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#trans" aria-expanded="false" aria-controls="trans">
-          <i class="menu-icon mdi mdi-account-circle-outline"></i>
+          <i class="menu-icon mdi mdi-chart-line"></i>
           <span class="menu-title">Transaction</span>
           <i class="menu-arrow"></i>
         </a>
@@ -119,13 +119,6 @@
             <li class="nav-item"> <a class="nav-link" href="/transaksi">Manage Transaction</a></li>
           </ul>
         </div>
-      </li>
-      <li class="nav-item nav-category">help</li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-          <i class="menu-icon mdi mdi-file-document"></i>
-          <span class="menu-title">Documentation</span>
-        </a>
       </li>
     </ul>
   </nav>

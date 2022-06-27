@@ -55,7 +55,7 @@ class TransaksiController extends Controller
 
         $transaksi->save();
 
-        return redirect('/course')->with('success', 'Terima Kasih telah melakukan transaksi');
+        return redirect('/course')->with('success', 'Terima Kasih telah melakukan transaksi, segera melunasi pembayaran!!');
     }
 
     /**
@@ -105,7 +105,7 @@ class TransaksiController extends Controller
             Storage::delete($transaksi->bukti);
         }
         $transaksi->delete();
-        return redirect('/admin/transaksi')->with('success', 'Transaksi telah dihapus');
+        return redirect('/transaksi')->with('success', 'Transaksi telah dihapus');
     }
 
     public function bayar(Request $request){
@@ -121,7 +121,7 @@ class TransaksiController extends Controller
 
         $transaksi->save();
 
-        return redirect('/transaksi')->with('success', 'Terima Kasih telah melakukan transaksi');
+        return redirect('/transaksiMember')->with('success', 'Terima Kasih telah melakukan transaksi');
 
     }
 

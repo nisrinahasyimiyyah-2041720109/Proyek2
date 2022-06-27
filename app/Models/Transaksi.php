@@ -14,7 +14,8 @@ class Transaksi extends Model
         'bukti',
         'user_id',
         'course_id',
-        'verify'
+        'verify',
+        'progres'
     ];
 
     public function course(){

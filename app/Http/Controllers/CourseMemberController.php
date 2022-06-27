@@ -10,14 +10,14 @@ class CourseMemberController extends Controller
     public function index()
     {
         return view('courseMember',[
-            'transaksi'=> Transaksi::all()
+            'transaksi'=> Transaksi::orderBy('progres','asc')->paginate(3)
         ]);
     }
 
     public function transaksi()
     {
         return view('transaksi',[
-            'transaksi'=> Transaksi::all()
+            'transaksi'=> Transaksi::orderBy('id','desc')->paginate(3)
         ]);
     }
 }

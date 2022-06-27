@@ -28,10 +28,25 @@
                     <p><b>Pertemuan : </b>{{ $t->course->materi->count()}} Pertemuan</p>
                 </div>
                 <div class="col">
-                    <button type="button" class="btn btn-primary my-2">
-                        <i class="bi bi-caret-right-square me-1"></i>
-                        Get Enroll
-                      </button>
+                    @if ($t->progres == 0)
+                        <a href="/myCourse/{{ $t->id }}" type="button" class="btn btn-primary my-2">
+                            <i class="bi bi-caret-right-square me-1"></i>
+                            Get Enroll
+                        </a>
+                    @elseif ($t->progres == $t->course->materi->count())
+                        <h4><span class="badge bg-success"><i class="bi bi-check-circle me-2 d-inline"></i>Complete</span><h4>
+                        <a href="/reset/{{ $t->id }}" type="button" class="btn btn-primary my-2 d-inline">
+                            <i class="bi bi-arrow-repeat"></i>
+                            Reset
+                        </a>
+                    @else
+                        <a href="/myCourse/{{ $t->id }}" type="button" class="btn btn-primary my-2">
+                            <i class="bi bi-caret-right-square me-1"></i>
+                            Continue
+                        </a>
+                        <h4><span class="badge bg-warning text-black">Progres {{ ceil( $t->progres / $t->course->materi->count() * 100 ) }}%</span><h4>
+                    @endif
+                      
                 </div>
             </div>
         @endif
@@ -40,8 +55,12 @@
     <p class="text-light text-center fs-4">Produk masih belum tersedia.</p>
     @endif
     @endforeach
-    
-    
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {{$transaksi->links()}}
+        </ul>
+    </nav>
 </div>
 
 

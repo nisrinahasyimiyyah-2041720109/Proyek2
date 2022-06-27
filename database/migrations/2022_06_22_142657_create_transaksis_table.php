@@ -20,6 +20,7 @@ class CreateTransaksisTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('course_id');
             $table->integer('verify')->default(0);
+            $table->integer('progres')->default(0);
         });
     }
 

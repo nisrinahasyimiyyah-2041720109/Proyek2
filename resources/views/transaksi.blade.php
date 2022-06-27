@@ -6,6 +6,16 @@
     <b> My Course </b>
 </h1>
 
+@if (session()->has('success'))
+<script>
+  $(document).ready(function(){
+    $(".modal-title").text("Success !!");
+    $(".modal-body p").text("{{ session('success') }}");
+    $("#myModal").modal('show');
+  });
+</script>
+  @endif
+
 <div class="container my-3">
     
     @foreach ($transaksi as $t)
@@ -78,9 +88,32 @@
     <p class="text-light text-center fs-4">Anda Belum Memiliki transaksi apapun</p>
     @endif
     @endforeach
-    
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {{$transaksi->links()}}
+        </ul>
+    </nav>
     
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success">
+          <h5 class="modal-title"></h5>
+          
+        </div>
+        <div class="modal-body">
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 
 @endsection

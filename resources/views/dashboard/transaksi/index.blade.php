@@ -67,7 +67,7 @@
           <td>
             <a href="#orderModal{{ $t->id }}" data-bs-toggle="modal" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a>
             {{-- <a href="/admin/member/{{ $t->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a> --}}
-            <form action="/admin/member/{{ $t->id }}" method="post" class="d-inline">
+            <form action="/transaksi/{{ $t->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" ><span class="menu-icon mdi mdi-backspace"></button>
