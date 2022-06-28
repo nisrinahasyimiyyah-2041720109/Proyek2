@@ -14,9 +14,8 @@ class DashboardCategoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.category.index',[
-            'category'=> Category::all()
-        ]);
+        $category = Category::paginate(8);
+        return view('dashboard.category.index', compact('category'));
     }
 
     /**

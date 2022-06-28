@@ -37,7 +37,15 @@
                     <img src="{{ asset('storage/' . $t->bukti) }}" class="card-img-top" alt="{{ $t->course->title }}{{ $t->user->name  }}">
                   </div>                 
                   <div class="modal-footer">
-                      <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah anda yakin?')">Submit</button>
+                    @if ($t->verify == 0)
+                      <form action="/verifyTransaksi" method="get" class="d-inline">
+                      @csrf
+                      <input type="hidden" name="id" value="{{ $t->id }}">
+                      <button type="submit" class="badge bg-warning border-0" >Verify Now !!</button>
+                      </form>
+                    @else
+                      <h4><span class="badge bg-success">verified</span></h4>
+                    @endif
                   </div>
                   </form>
               </div>
@@ -77,6 +85,9 @@
         @endforeach    
       </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+      {{ $transaksi->links() }}
+    </div>
   </div>
 
 @endsection

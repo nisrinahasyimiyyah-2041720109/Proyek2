@@ -12,12 +12,12 @@
                   <div class="statistics-details d-flex align-items-center justify-content-between">
                     <div>
                       <p class="statistics-title">Member</p>
-                      <h4 class="rate-percentage">{{ $member->count() }} Person</h4>
+                      <h4 class="rate-percentage">{{ $member->count() }} Persons</h4>
                       
                     </div>
                     <div>
                       <p class="statistics-title">Admin</p>
-                      <h4 class="rate-percentage">{{ $admin->count() }} Person</h4>
+                      <h4 class="rate-percentage">{{ $admin->count() }} Persons</h4>
                       
                     </div>
                     <div>

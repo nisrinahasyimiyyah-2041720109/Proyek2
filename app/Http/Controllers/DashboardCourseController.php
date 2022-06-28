@@ -20,8 +20,8 @@ class DashboardCourseController extends Controller
         // $category = Category::all();
         // return view('dashboard.course.index', ['category' => $category]);
 
-        $course = Course::with('category')->get();
-        $course = Course::all();
+        $course = Course::with('category')->paginate(6);
+        // $course = Course::all();
         return view('dashboard.course.index', compact('course'))->with('i', (request()
             ->input('page', 1) - 1) * 5);
     }

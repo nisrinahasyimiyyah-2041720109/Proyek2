@@ -15,10 +15,8 @@ class DashboardUserController extends Controller
      */
     public function index()
     {
-        return view('dashboard.member.index',[
-            'user'=> User::all()
-        ]);
-        
+        $user = User::paginate(5);
+        return view('dashboard.member.index', compact('user'));
     }
 
     /**

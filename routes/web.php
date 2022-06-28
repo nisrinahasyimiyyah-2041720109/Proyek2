@@ -3,12 +3,14 @@
 use App\Http\Models\User;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MyCourseController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\CourseMemberController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardAdminController;
@@ -27,9 +29,9 @@ use App\Http\Controllers\DashboardCategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', [IndexController::class, 'index']);
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('checkRole:admin');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -72,6 +74,8 @@ Route::get('/transaksiMember', [CourseMemberController::class, 'transaksi']);
 Route::get('/myCourse/{id}', [MyCourseController::class, 'show']);
 Route::get('/next/{id}', [MyCourseController::class, 'next']);
 Route::get('/reset/{id}', [MyCourseController::class, 'reset']);
+
+Route::get('/sertifikat', [SertifikatController::class, '__invoke']);
 
 
 

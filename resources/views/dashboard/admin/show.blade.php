@@ -5,7 +5,11 @@
 <div class="container my-5">
     <div class="row justify-content-center align-items-center">
         <div class="card"  style="width: 30rem;">
-            <img src="{{ asset('storage/' . $user->photo) }}" class="card-img-top" alt="{{ $user->name }}">
+            @if ($user->photo == null)
+                
+            @else
+                <img src="{{ asset('storage/' . $user->photo) }}" class="card-img-top" alt="{{ $user->name }}">
+            @endif
             <div class="card-header ">
                Detail Admin
             </div>

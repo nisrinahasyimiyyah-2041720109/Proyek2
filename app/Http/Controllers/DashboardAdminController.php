@@ -15,9 +15,8 @@ class DashboardAdminController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin.index',[
-            'user'=> User::all()
-        ]);
+        $user = User::paginate(5);
+        return view('dashboard.admin.index', compact('user'));
     }
 
     /**

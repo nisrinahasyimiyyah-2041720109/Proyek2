@@ -51,6 +51,9 @@
                 </div>
             </div>
         @endforeach
+        <div class="d-flex justify-content-center">
+          {{ $course->links() }}
+        </div>
         <div id="myModal" class="modal fade ">
           <div class="modal-dialog">
               <div class="modal-content ">
@@ -89,7 +92,6 @@
         </div>
         @endif 
     </div>
-   {{-- modal --}}
    
 </div>
 

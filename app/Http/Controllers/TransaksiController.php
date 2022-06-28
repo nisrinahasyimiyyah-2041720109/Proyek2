@@ -17,7 +17,7 @@ class TransaksiController extends Controller
     public function index()
     {
         // $transaksi = transaksi::with('category')->get();
-        $transaksi = transaksi::all();
+        $transaksi = transaksi::paginate(6);
         return view('dashboard.transaksi.index', compact('transaksi'))->with('i', (request()
             ->input('page', 1) - 1) * 5);
     }
