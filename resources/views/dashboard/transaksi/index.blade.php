@@ -8,6 +8,10 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Data Transaksi</h1>
       </div>
+      <a href="/sertifikat" type="button" class="d-inline btn btn-primary btn-sm my-2 ">
+        <i class="bi bi-printer"></i>
+        <b>Export Transaksi</b>
+      </a>
         @if (session()->has('success'))
       <div class="alert alert-success col-lg-12" role="alert">
         {{ session('success') }}
@@ -56,20 +60,29 @@
           <td>{{ $t->user->name }}</td>
           <td>{{ $t->course->title }}</td>
           <td>
-            <img src="{{ asset('storage/' . $t->bukti) }}" alt="{{ $t->course->title }}{{ $t->user->name  }}">
+            @if ($t->bukti == null)
+              Belum Bayar
+            @else
+              <img src="{{ asset('storage/' . $t->bukti) }}" alt="{{ $t->course->title }}{{ $t->user->name  }}">
+            @endif
+            
           </td>
-          <td>       
-              @if( $t->verify  == 0)
-              <form action="/verifyTransaksi" method="get" class="d-inline">
-              @csrf
-              <input type="hidden" name="id" value="{{ $t->id }}">
-              <button type="submit" class="badge bg-warning border-0" >Verify</button>
-              </form>
-
+          <td>
+              @if ($t->bukti == null)
+                -
               @else
-              <h4><span class="badge bg-success">verified</span></h4>
+                @if( $t->verify  == 0)
+                <form action="/verifyTransaksi" method="get" class="d-inline">
+                @csrf
+                <input type="hidden" name="id" value="{{ $t->id }}">
+                <button type="submit" class="badge bg-warning border-0" >Verify</button>
+                </form>
+                @else
+                <h4><span class="badge bg-success">verified</span></h4>
 
-              @endif
+                @endif
+              @endif       
+              
             
           </td>
           <td>

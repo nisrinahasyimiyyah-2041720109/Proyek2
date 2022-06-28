@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
+use App\Models\Category;
 
 class MyCourseController extends Controller
 {
     public function show($id)
     {
         $transaksi = Transaksi::where('id', $id)->first();
+        $category = Category::all();
         return view('MyCourse', [
             'materi' => $transaksi->course->materi,
-            'transaksi' => $transaksi
+            'transaksi' => $transaksi,
+            'category' => $category
         ]);
     }
 

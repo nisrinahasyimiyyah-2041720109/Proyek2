@@ -8,8 +8,8 @@ use PDF;
 
 class SertifikatController extends Controller
 {
-    public function __invoke(Request $request){
-        $transaksi = Transaksi::all()->where('id', $request->id);
+    public function __invoke(){
+        $transaksi = Transaksi::all();
         $pdf = PDF::loadview('sertifikat', compact('transaksi'));
         $pdf->setPaper('A4', 'landscape');
 

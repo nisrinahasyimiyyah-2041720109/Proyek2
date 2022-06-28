@@ -28,7 +28,8 @@ class CourseController extends Controller
     public function show($id){
         return view('courseDetail',[
            "title"=>"course",
-           'course' => Course::with('category')->with('materi')->find($id)
+           'course' => Course::with('category')->with('materi')->find($id),
+           'category' => Category::all()
        ]);
    }
 }

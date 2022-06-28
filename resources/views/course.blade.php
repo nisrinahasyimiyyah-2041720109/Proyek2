@@ -80,7 +80,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          
+          <a href="/transaksiMember" class="btn btn-primary">Go To Transaction</a>
         </div>
       </div>
     </div>
