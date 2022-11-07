@@ -7,7 +7,7 @@
       </div>
       <div>
         <a class="navbar-brand brand-logo"  href="/">
-          <img src="{{ asset('images/logo.png') }}" alt="logo" />
+          <img src="{{ asset('images/logoTulisan.png') }}" alt="logo" width="1000" height="1000">
         </a>
         <a class="navbar-brand brand-logo-mini" href="/">
           <img src="{{ asset('images/logo-mini.png') }}" alt="logo" />
