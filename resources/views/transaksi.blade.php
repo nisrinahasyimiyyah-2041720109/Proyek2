@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-6">
                     <p><b>Title : </b>{{ $t->course->title }}</p>
-                    <p><b>Kategori : </b>{{ $t->course->category->name }}</p>
+                    <p><b>Kelas : </b>{{ $t->course->category->name }}</p>
                     <p><b>Harga : </b>Rp.{{ $t->course->harga }}</p>
                     <p><b>Pertemuan : </b>{{ $t->course->materi->count()}} Pertemuan</p>
                     

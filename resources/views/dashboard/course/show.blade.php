@@ -11,9 +11,9 @@
             </div>
             <div class="card body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Title Course :  </b>{{ $course->title }}</li>
+                    <li class="list-group-item"><b>Title Bimbel :  </b>{{ $course->title }}</li>
                     <li class="list-group-item"><b>Deskripsi Singkat :  </b>{{ $course->deskripsi }}</li>
-                    <li class="list-group-item"><b>Category : </b>{{ $course->category->name }}</li>
+                    <li class="list-group-item"><b>Kelas : </b>{{ $course->category->name }}</li>
                     <li class="list-group-item"><b>Requirment : </b>{{ $course->requirment }}</li>
                     <li class="list-group-item"><b>Outcome : </b>{{ $course->outcome }}</li>
                     <li class="list-group-item"><b>Harga : </b>Rp.{{ $course->harga }}</li>

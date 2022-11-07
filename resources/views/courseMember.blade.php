@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 class="my-5 text-center text-light">
-    <b> My Course </b>
+    <b> Kelasku </b>
 </h1>
 
 <div class="container my-3">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-6">
                     <p><b>Title : </b>{{ $t->course->title }}</p>
-                    <p><b>Kategori : </b>{{ $t->course->category->name }}</p>
+                    <p><b>Kelas : </b>{{ $t->course->category->name }}</p>
                     <p><b>Harga : </b>Rp.{{ $t->course->harga }}</p>
                     <p><b>Pertemuan : </b>{{ $t->course->materi->count()}} Pertemuan</p>
                 </div>

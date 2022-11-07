@@ -21,7 +21,7 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Member</th>
-          <th scope="col">course</th>
+          <th scope="col">Bimbel</th>
           <th scope="col">Bukti</th>
           <th scope="col">Verify</th>
           <th scope="col">Action</th>

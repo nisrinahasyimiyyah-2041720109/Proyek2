@@ -47,7 +47,7 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item nav-category">Courses</li>
+      <li class="nav-item nav-category">Bimbel</li>
       <li class="nav-item">
         <a class="nav-link" href="/admin/kelas">
           <i class="menu-icon mdi mdi-layers-outline"></i>
@@ -69,17 +69,17 @@
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#course" aria-expanded="false" aria-controls="charts">
           <i class="menu-icon mdi mdi-book-multiple"></i>
-          <span class="menu-title">Course</span>
+          <span class="menu-title">Bimbel</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="course">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/course">Manage Course</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/course">Manage Bimbel</a></li>
           </ul>
         </div>
         <div class="collapse" id="course">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/course/create">Add Course</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/course/create">Add Bimbel</a></li>
           </ul>
         </div>
       </li>

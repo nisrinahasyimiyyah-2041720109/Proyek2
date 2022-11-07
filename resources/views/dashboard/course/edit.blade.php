@@ -3,7 +3,7 @@
    
   <div class="col-lg-8 mx-5 mt-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Edit Course</h1>
+        <h1 class="h2">Edit Bimbel</h1>
       </div>
       <form method="post" action="/admin/course/{{ $course->id }}" class="mb-5" enctype="multipart/form-data">
         @method('put')
@@ -27,7 +27,7 @@
               @enderror
           </div>
           <div class="mb-3">
-            <label for="category_id" class="form-label">Kategori</label>
+            <label for="category_id" class="form-label">Kelas</label>
            <select class="form-select" name="category_id" >
               @foreach ($category as $c)
               @if (old('category_id', $course->category_id) == $c->id)
@@ -39,7 +39,7 @@
            </select>
           </div>
           <div class="mb-3">
-            <label for="requirment" class="form-label">Requirment</label>
+            <label for="requirment" class="form-label">Requirement</label>
             <input type="text" class="form-control @error('requirment') is-invalid @enderror" id="requirment" name="requirment" value="{{ old('requirment', $course->requirment) }}">
               @error('requirment')
               <div class="invalid-feedback">

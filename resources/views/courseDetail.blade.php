@@ -51,7 +51,7 @@
   </div>
 
 <h1 class="mt-3 mb-3 text-center text-light">
-    <b> Course Detail </b>
+    <b> Bimbel Detail </b>
 </h1>
 
 <div class="container mt-3 mb-3">
@@ -63,7 +63,7 @@
             </div>
             <div class="card body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Kategori : </b>{{ $course->category->name }}</li>
+                    <li class="list-group-item"><b>Kelas : </b>{{ $course->category->name }}</li>
                     <li class="list-group-item"><b>Requirment :  </b>{{ $course->requirment }}</li>
                     <li class="list-group-item"><b>Outcome : </b>{{ $course->outcome }}</li>
                     <li class="list-group-item"><b>Deskripsi : </b>{{ $course->deskripsi }}</li>

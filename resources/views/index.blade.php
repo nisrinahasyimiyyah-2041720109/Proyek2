@@ -5,9 +5,9 @@
 <div class="row">
     <div class="col ">
         <div class="profile">
-            <h1 class="fw-bold">Kursus</h1>
+            <h1 class="fw-bold">FAST</h1>
             <h3>
-                Ini Adalah Kursus
+                Fantastic Smart Institute
             </h3>
         </div>
     </div>

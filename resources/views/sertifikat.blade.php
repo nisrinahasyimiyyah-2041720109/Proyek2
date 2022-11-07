@@ -24,7 +24,7 @@
                  <tr class="table-active">
                     <th>ID</th>
                     <th>Member</th>
-                    <th>Course</th>
+                    <th>Bimbel</th>
                     <th>Harga</th>
                     <th>Pembayaran</th>
                 </tr>

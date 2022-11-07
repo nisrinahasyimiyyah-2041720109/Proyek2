@@ -4,7 +4,7 @@
 
 
 <h1 class="mt-3 mb-3 text-center text-light">
-    <b> {{ $transaksi->course->title }} Course </b>
+    <b> {{ $transaksi->course->title }} Bimbel </b>
 </h1>
 
 <div class="container mt-3 mb-3">
@@ -12,7 +12,7 @@
         <div class="row justify-content-center align-items-center">
             <div class="card"  style="width: 39rem;">
                 <div class="card-header">
-                    <b>Course Complete</b>
+                    <b>Bimbel Complete</b>
                 </div>
                 <div class="card body">
                     <img src="{{ asset('images/success.png') }}" class="card-img-top" alt="{{ $transaksi->course->title }}">
