@@ -39,7 +39,7 @@
                 </div>
               </div> 
                 <div>
-                  <img src="{{ asset('images\bg-cute.jpeg') }}" height="590" width="1400">
+                  <img src="{{ asset('images\bg-cute.jpeg') }}" height="auto" width="100%">
                 </div>
             </div>
           </div>
