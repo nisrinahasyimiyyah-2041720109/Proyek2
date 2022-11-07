@@ -42,7 +42,7 @@ class DashboardCategoryController extends Controller
 
         Category::create($validatedData);
 
-        return redirect('/admin/category')->with('success', 'Kategori baru telah ditambahkan');
+        return redirect('/admin/kelas')->with('success', 'Kelas baru telah ditambahkan');
     }
 
     /**
@@ -86,7 +86,7 @@ class DashboardCategoryController extends Controller
        
         $category->save();
 
-        return redirect('/admin/category')->with('success', 'Kategori berhasil diedit');
+        return redirect('/admin/kelas')->with('success', 'Kelas berhasil diedit');
     }
 
     /**
@@ -98,6 +98,6 @@ class DashboardCategoryController extends Controller
     public function destroy($id)
     {
        Category::where('id', $id)->delete();
-        return redirect('/admin/category')->with('success', 'Kategori telah dihapus');
+        return redirect('/admin/kelas')->with('success', 'Kelas telah dihapus');
     }
 }

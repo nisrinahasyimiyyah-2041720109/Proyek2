@@ -49,9 +49,9 @@
       </li>
       <li class="nav-item nav-category">Courses</li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/category">
+        <a class="nav-link" href="/admin/kelas">
           <i class="menu-icon mdi mdi-layers-outline"></i>
-          <span class="menu-title">Category</span>
+          <span class="menu-title">Kelas</span>
         </a>
       </li>
       {{-- <li class="nav-item">

@@ -51,7 +51,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('/admin/member', DashboardUserController::class)->middleware('checkRole:admin');
 Route::resource('/admin/user', DashboardAdminController::class)->middleware('checkRole:admin');
 
-Route::resource('/admin/category', DashboardCategoryController::class)->middleware('checkRole:admin');
+Route::resource('/admin/kelas', DashboardCategoryController::class)->middleware('checkRole:admin');
 
 Route::resource('/admin/course', DashboardCourseController::class)->middleware('checkRole:admin');
 Route::resource('/admin/materi', DashboardMateriController::class)->middleware('checkRole:admin');
