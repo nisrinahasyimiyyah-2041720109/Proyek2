@@ -10,6 +10,13 @@ body{
 
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
 .profile h1{
     padding-top: 10%;
     text-align: left;
