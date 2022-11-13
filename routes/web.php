@@ -17,6 +17,7 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardCourseController;
 use App\Http\Controllers\DashboardMateriController;
 use App\Http\Controllers\DashboardCategoryController;
+use App\Http\Controllers\IndexUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ use App\Http\Controllers\DashboardCategoryController;
 
 
 Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/home', [IndexUserController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('checkRole:admin');
 
