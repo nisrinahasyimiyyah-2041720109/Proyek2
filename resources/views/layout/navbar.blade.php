@@ -34,7 +34,7 @@
                 @auth
                 @if(auth()->user()->role == 'member')
                 <li class="nav-item">
-                    <a class= "nav-link {{ Request::is('courseMember') ? 'active' : '' }}"  href="/courseMember"><i class="bi bi-journal-text mx-2"></i>My Course</a>
+                    <a class= "nav-link {{ Request::is('courseMember') ? 'active' : '' }}"  href="/courseMember"><i class="bi bi-journal-text mx-2"></i>My Class</a>
                 </li>
                 <div class="vr" style="color :white; margin: 0px 8px 0px 8px;"></div>
                 @endif
