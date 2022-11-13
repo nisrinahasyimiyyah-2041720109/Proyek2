@@ -11,14 +11,15 @@
             </h3>
             @auth
                 @if(auth()->user()->role == "member" )
-                    @if(auth()->user()->id == $transaksi->user_id)
+                    @if(auth()->user()->transaksi == null)
                         <h4>
-                            Anda telah terdaftar pada bimbel : {{ $transaksi->course->title }}<br><br>
-                            Klik menu "My Class" untuk melihat kelas bimbel Anda.
+                            Anda belum terdaftar bimbel. Klik menu "Bimbel" untuk memilih kelas bimbel yang tersedia.
                         </h4>
                     @else
                         <h4>
-                            Anda belum terdaftar bimbel. Klik menu "Bimbel" untuk memilih kelas bimbel yang tersedia.
+                           
+                            Anda telah terdaftar pada bimbel : {{ $transaksi->course->title }}<br><br>
+                            Klik menu "My Class" untuk melihat kelas bimbel Anda.
                         </h4>
                     @endif
                 @endif
