@@ -35,8 +35,7 @@ class LoginController extends Controller
 
             return redirect('/dashboard');
         } 
-
-        return redirect('/register')->with('loginError','Anda Belum Memiliki Akun, Silahkan Daftar!');
+            return redirect('/register')->with('loginError','Anda Belum Memiliki Akun, Silahkan Daftar!');
 
     }
 
