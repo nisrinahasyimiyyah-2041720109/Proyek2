@@ -33,11 +33,10 @@ class LoginController extends Controller
                 return back()->with('loginError','Silahkan hubungi administrator untuk aktivasi akun anda agar bisa masuk');
             }
 
-            return redirect('/home');
+            return redirect('/dashboard');
+        } 
 
-        }
-
-        return back()->with('loginError','Silahkan coba lagi');
+        return redirect('/register')->with('loginError','Anda Belum Memiliki Akun, Silahkan Daftar!');
 
     }
 
