@@ -22,8 +22,10 @@ class IndexController extends Controller
                 return view('index', [
                     'category' => $category,
                     'transaksi' => $transaksi,
-                    'course' => $transaksi->course,
+                    // 'course' => $transaksi->course,
                 ]);
+            }else{
+                return view('index');
             }
 
         }else{
