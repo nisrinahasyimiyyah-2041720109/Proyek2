@@ -17,9 +17,9 @@
             <form method="post" action="/transaksi">
               @csrf
                 <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
-                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Apakah anda yakin?')">Pay Later</button>
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Apakah anda yakin?')">Bayar Nanti</button>
             </form>
-             <button type="button" class="btn btn-primary" value="purchase" id="hide">Pay Now</button>
+             <button type="button" class="btn btn-primary" value="purchase" id="hide">Bayar Sekarang</button>
         </div>
       </div>
       <div class="purchase modal-content" style="display: none;">
@@ -76,7 +76,7 @@
                 @auth
                 <button type="button" class="btn btn-success my-2 float-end" data-bs-toggle="modal" data-bs-target="#orderModal">
                     <i class="bi bi-bag-plus me-1"></i>
-                    Order Now
+                    Ambil Kelas
                   </button>
                   @endauth
               </div>
