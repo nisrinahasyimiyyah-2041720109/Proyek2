@@ -24,7 +24,7 @@
   @endif
 
 @if ($course->count())
-<div class="card mb-4">
+<!-- <div class="card mb-4">
     <div style="max-height: 400px; overflow:hidden">
         <img src="{{ asset('storage/' . $course[0]->photo) }}" class="card-img-top" alt="{{ $course[0]->photo }}" class="img-fluid ">
     </div>
@@ -35,14 +35,14 @@
       <p class="card-text"><small class="text-muted">Last updated {{ $course[0]->created_at->diffForHumans() }}</small></p>
       <a href="/course/{{ $course[0]->id }}" class="btn btn-primary">More Info</a>
     </div>
-  </div>
+  </div> -->
 @else
   <p class="text-light text-center fs-4">Produk masih belum tersedia.</p>
 @endif
     
 <div class="container">
     <div class="row">
-        @foreach ($course->skip(1) as $p)
+        @foreach ($course as $p)
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div style="max-height: 500px; overflow:hidden">

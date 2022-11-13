@@ -11,7 +11,7 @@
                 <li class="nav-item">
                 <a class= "nav-link {{ Request::is('course') ? 'active' : '' }} "  href="/course"><i class="bi bi-book-half mx-2"></i>Bimbel</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Kelas
                     </a>
@@ -25,7 +25,7 @@
                         @endforeach
                         </form>
                     </ul>
-                  </li>
+                  </li> -->
                
             </ul>
 
