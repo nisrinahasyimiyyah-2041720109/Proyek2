@@ -15,7 +15,7 @@ class IndexController extends Controller
     public function index()
     {
         if(Auth::user()){
-            if(user()->role=="member"){
+            if(Auth::user()->role=="member"){
                 $transaksi = Transaksi::where('user_id', Auth::id())->first();
                 $category = Category::all();
 
