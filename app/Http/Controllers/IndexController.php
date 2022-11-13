@@ -14,7 +14,19 @@ class IndexController extends Controller
 
     public function index()
     {
-        return view('index');
+        if(Auth::user()){
+             $transaksi = Transaksi::where('user_id', Auth::id())->first();
+            $category = Category::all();
+
+            return view('index', [
+                'category' => $category,
+                'transaksi' => $transaksi,
+                'course' => $transaksi->course,
+            ]);
+        }else{
+            return view('index');
+        }
+        
     }
 
 }
