@@ -11,7 +11,7 @@
             </h3>
             @auth
                 @if(auth()->user()->role == "member" )
-                    @if(auth()->user()->transaksi == null)
+                    @if(auth()->user()->transaksi->count() == 0)
                         <h4>
                             Anda belum terdaftar bimbel. Klik menu "Bimbel" untuk memilih kelas bimbel yang tersedia.
                         </h4>
