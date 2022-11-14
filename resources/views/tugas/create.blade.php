@@ -16,6 +16,7 @@
           <form method="post" action="/member/tugas" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="pdf selectt mb-3" style="display: none;">
+              <input type="hidden" name="materi_id" id="materi_id" value="{{ $materi_id }}">
               <label for="pdf" class="form-label @error('pdf') is-invalid @enderror">PDF</label>
               <img class="img-preview img-fluid mb-3 col-sm-5">
               <input class="form-control" type="file" id="pdf" name="pdf" onchange="previewImage()">
