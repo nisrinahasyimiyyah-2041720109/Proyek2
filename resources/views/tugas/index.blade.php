@@ -79,7 +79,7 @@
               @endforeach    
             </tbody>
           </table>
-          <a href="/member/tugas" class="btn btn-success my-3">Back</a>
+          <a href="/myCourse/{id}" class="btn btn-success my-3">Back</a>
       </div>
     </div>
   </div>

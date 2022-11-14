@@ -117,15 +117,11 @@ class TugasController extends Controller
         $materi_id = new \stdClass();
         $materi_id = $request->get('materi_id');
         $request->validate([
-            'subject' => 'required',
             'materi_id'=>'required',
-            'link' => 'nullable|url',
             'pdf' => 'nullable|mimes:pdf|max:2048'
         ]);
 
         $tugas = Tugas::where('id', $id)->first();
-        $tugas->subject = $request->get('subject');
-        $tugas->link = $request->get('link');
 
         if($request->file('pdf')){
             if($request->oldpdf){
