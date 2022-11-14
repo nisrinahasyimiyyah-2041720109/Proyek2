@@ -11,26 +11,6 @@
             @method('put')
             @csrf
             <input type="hidden" name="materi_id" id="materi_id" value="{{ $materi_id }}">
-            <div class="mb-3">
-                <label for="subject" class="form-label">Subject Tugas</label>
-                <input type="text" class="form-control @error('subject') is-invalid @enderror" id="subject" name="subject" value="{{ old('subject', $tugas->subject) }}">
-                  @error('subject')
-                  <div class="invalid-feedback">
-                  {{ $message }}
-                  </div>
-                  @enderror
-              </div>
-              @if ($tugas->pdf == null)
-              <div class="mb-3">
-                <label for="link" class="form-label">Link Video</label>
-                <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" value="{{ old('link', $tugas->link) }}">
-                  @error('link')
-                  <div class="invalid-feedback">
-                  {{ $message }}
-                  </div>
-                  @enderror
-              </div>
-              @else
               <div class="mb-3">
                 <label for="pdf" class="form-label @error('pdf') is-invalid @enderror">pdf Admin</label>
                 <input type="hidden" name="oldpdf" value="{{ $tugas->pdf }}">
@@ -45,12 +25,7 @@
                 {{ $message }}
                 </div>
                 @enderror
-              </div>
-              @endif
-              
-            
-              
-            
+              </div>              
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
       </div>

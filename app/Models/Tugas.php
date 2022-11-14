@@ -14,4 +14,9 @@ class Tugas extends Model
         'pdf',
         'materi_id'
     ];
+
+    public function materi(){
+        return $this->hasOne(Materi::class);
+    
+    }
 }
