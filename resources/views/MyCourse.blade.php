@@ -63,7 +63,11 @@
                         {{-- <li class="list-group-item"><b>Link :  </b>{{ $materi[$transaksi->progres]->link }}</li> --}}
                     </ul>
                     <ul class="list-group list-group-flush">
-                        <a href="/member/tugas" class="badge bg-success" >Upload Tugas</a>
+                        <form action="/member/tugas" class="d-inline mx-3">
+                            @csrf
+                          <input type="hidden" name="materi_id" id="materi_id" value="{{ $materi[$transaksi->progres]->id }}">
+                          <button type="submit" class="badge bg-success border-0" >Upload tugas</button>
+                        </form>
                     </ul>
                 </div>
     
