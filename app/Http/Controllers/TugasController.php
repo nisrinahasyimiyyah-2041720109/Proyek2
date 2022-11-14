@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\materi;
+use App\Models\Materi;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class TugasController extends Controller
 {
@@ -36,7 +37,7 @@ class TugasController extends Controller
      */
     public function create(Request $request)
     {
-        $materi = materi::all();
+        $materi = Materi::all();
         $materi_id = new \stdClass();
         $materi_id = $request->get('materi_id');
         return view('tugas.create', [
