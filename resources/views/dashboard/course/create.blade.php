@@ -38,6 +38,7 @@
          </select>
         </div>
         <div class="mb-3">
+               <div class="mb-3">
           <label for="requirment" class="form-label">Requirement</label>
           <input type="text" class="form-control @error('requirment') is-invalid @enderror" id="requirment" name="requirment" value="{{ old('requirment') }}">
             @error('requirment')
