@@ -64,8 +64,8 @@
             <div class="card body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>Kelas : </b>{{ $course->category->name }}</li>
-                    <li class="list-group-item"><b>Requirment :  </b>{{ $course->requirment }}</li>
-                    <li class="list-group-item"><b>Outcome : </b>{{ $course->outcome }}</li>
+                    <li class="list-group-item"><b>Persyaratan :  </b>{{ $course->requirment }}</li>
+                    <li class="list-group-item"><b>Hasil Pencapaian : </b>{{ $course->outcome }}</li>
                     <li class="list-group-item"><b>Deskripsi : </b>{{ $course->deskripsi }}</li>
                     <li class="list-group-item"><b>Harga : </b>Rp.{{ $course->harga }}</li>
                     <li class="list-group-item"><b>Jumlah Pertemuan : </b>{{ $course->materi->count() }} Pertemuan</li>
