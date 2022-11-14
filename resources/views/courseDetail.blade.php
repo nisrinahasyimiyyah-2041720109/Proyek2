@@ -68,7 +68,7 @@
                     <li class="list-group-item"><b>Outcome : </b>{{ $course->outcome }}</li>
                     <li class="list-group-item"><b>Deskripsi : </b>{{ $course->deskripsi }}</li>
                     <li class="list-group-item"><b>Harga : </b>Rp.{{ $course->harga }}</li>
-                    <li class="list-group-item"><b>Pertemuan : </b>{{ $course->materi->count() }} Pertemuan</li>
+                    <li class="list-group-item"><b>Jumlah Pertemuan : </b>{{ $course->materi->count() }} Pertemuan</li>
             </div>
 
             <div class="card-footer text-muted">

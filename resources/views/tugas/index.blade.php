@@ -12,7 +12,7 @@
         @else
         <input type="hidden" name="materi_id" id="materi_id" value="{{ $materi_id }}">
         @endif
-        <button type="submit" class="btn btn-primary mb-3" ><span class="menu-icon mdi mdi-plus me-4"></span>Upload Tugas</button>
+        <button type="submit" class="btn btn-primary mb-3" ><span></span>Upload Tugas</button>
         </form>
         {{-- <a href="/member/tugas/{{ (array) $materi_id }}/create" class="btn btn-primary mb-3"><span class="menu-icon mdi mdi-plus"></span>Tambah Pertemuan</a> --}}
     </div>
