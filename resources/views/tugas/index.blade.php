@@ -39,17 +39,9 @@
               @if($t->materi_id == $materi_id)    
               <tr>
                 {{-- <td>{{ $t->id }}</td> --}}
-                <td>{{ $t->subject }}</td>
-                @if ($t->pdf == null)
-                  <td>
-                    <a href="{{ $t->link }}" class="badge bg-danger"><span class="menu-icon mdi mdi-youtube mdi-24px"></span></a>   
-                  
-                  </td>
-                @else
                     <td>
                       <a href="{{ asset('storage/' . $t->pdf)  }}" class="badge bg-danger"><span class="menu-icon mdi mdi-file-pdf mdi-24px"></span></a>   
                     </td>
-                @endif
                 
                 <td>
                   {{-- <a href="/member/tugas/{{ $t->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a> --}}
