@@ -50,7 +50,6 @@
                      </div>
                     <div class="card-body">
                     <h5 class="card-title">{{ $p->title }}</h5>
-                    <p class="card-text">{{ $p->category->name }}</p>
                     <p class="card-text">Rp.{{ $p->harga }}</p>
                     <p class="card-text"><small class="text-muted">Last updated {{ $p->created_at->diffForHumans() }}</small></p>
                     <a href="/course/{{ $p->id }}" class="btn btn-primary">More Info</a>
