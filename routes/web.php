@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardCourseController;
 use App\Http\Controllers\DashboardMateriController;
 use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\IndexUserController;
+use App\Http\Controllers\TugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,9 @@ Route::resource('/admin/kelas', DashboardCategoryController::class)->middleware(
 
 Route::resource('/admin/course', DashboardCourseController::class)->middleware('checkRole:admin');
 Route::resource('/admin/materi', DashboardMateriController::class)->middleware('checkRole:admin');
+
+Route::resource('/member/tugas', TugasController::class);
+
 
 // Route::get('/materi/{id}', [DashboardMateriController::class, 'indexMateri']);
 

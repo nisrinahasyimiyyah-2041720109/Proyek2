@@ -62,6 +62,9 @@
                         {{-- <li class="list-group-item"><b>PDF : </b>{{ $materi[$transaksi->progres]->pdf }}</li> --}}
                         {{-- <li class="list-group-item"><b>Link :  </b>{{ $materi[$transaksi->progres]->link }}</li> --}}
                     </ul>
+                    <ul class="list-group list-group-flush">
+                        <a href="/member/tugas" class="badge bg-success" >Upload Tugas</a>
+                    </ul>
                 </div>
     
                 <div class="card-footer text-muted">

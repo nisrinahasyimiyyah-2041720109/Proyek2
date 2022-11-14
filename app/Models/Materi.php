@@ -21,5 +21,10 @@ class materi extends Model
         return $this->belongsTo(Course::class);
     
     }
+
+    public function tugas(){
+        return $this->hasOne(Tugas::class);
+    
+    }
     
 }
