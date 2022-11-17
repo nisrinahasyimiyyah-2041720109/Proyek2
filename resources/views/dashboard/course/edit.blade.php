@@ -39,6 +39,7 @@
            </select>
           </div>
           <div class="mb-3">
+      <div class="mb-3">
             <label for="requirment" class="form-label">Requirement</label>
             <input type="text" class="form-control @error('requirment') is-invalid @enderror" id="requirment" name="requirment" value="{{ old('requirment', $course->requirment) }}">
               @error('requirment')
@@ -47,8 +48,8 @@
               </div>
               @enderror
           </div>
-          <div class="mb-3">
-            <label for="outcome" class="form-label">Outcome</label>
+          <div class="mb-3">         
+               <label for="outcome" class="form-label">Outcome</label>
             <input type="text" class="form-control @error('outcome') is-invalid @enderror" id="outcome" name="outcome" value="{{ old('outcome', $course->outcome) }}">
               @error('outcome')
               <div class="invalid-feedback">
