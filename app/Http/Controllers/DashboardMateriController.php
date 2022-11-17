@@ -46,7 +46,7 @@ class DashboardMateriController extends Controller
         $course = course::all();
         $course_id = new \stdClass();
         $course_id = $request->get('course_id');
-        return view('dashboard.materi.create', [
+        return view('dashboard.materi.create1', [
             'course' => $course,
             'course_id' => $course_id
         ]);
@@ -60,31 +60,38 @@ class DashboardMateriController extends Controller
      */
     public function store(Request $request)
     {
-        $materi = Materi::all();
+        // $materi = Materi::all();
+        // $course_id = new \stdClass();
+        // $course_id = $request->get('course_id');
+        // $validatedData = $request->validate([
+        //     'subject' => 'required',
+        //     'course_id'=>'required',
+        //     'link' => 'nullable|url',
+        //     'pdf' => 'nullable|mimes:pdf|max:2048'
+            
+        // ]);
+
+        // if($request->file('pdf')){
+        //     $validatedData['pdf'] = $request->file('pdf')->store('course-doc');
+        // }
+
+        // Materi::create($validatedData, ['course_id' => $validatedData['course_id']]); 
+        // return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Pertemuan baru telah ditambahkan');
         $course_id = new \stdClass();
         $course_id = $request->get('course_id');
-        $validatedData = $request->validate([
-            'subject' => 'required',
-            'course_id'=>'required',
-            'link' => 'nullable|url',
-            'pdf' => 'nullable|mimes:pdf|max:2048'
+        foreach($request->subject as $key=>$subject){
+            $data = new Materi();
+            $data->subject = $subject;
+            $data->course_id =$course_id;
             
-        ]);
+             if($request->file('pdf')[$key]){
+             $data->pdf = $request->file('pdf')[$key]->store('course-doc');
+            }
 
-        if($request->file('pdf')){
-            $validatedData['pdf'] = $request->file('pdf')->store('course-doc');
+            $data->save();
         }
 
-        Materi::create($validatedData, ['course_id' => $validatedData['course_id']]);
-
-        // return redirect()->route('dashboard.materi.index', compact('course_id'));
-        
-        return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Pertemuan baru telah ditambahkan');
-        // return view('dashboard.materi.index', [
-        //              'materi' => $materi,
-        //              'course_id' => $course_id
-        //              ]);
-
+        return redirect('/admin/materi')->with('course_id' , $course_id)->with('success', 'Pertemuan telah ditambahkan');
     }
 
     /**
