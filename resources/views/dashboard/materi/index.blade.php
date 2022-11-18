@@ -42,7 +42,7 @@
           <td>{{ $m->subject }}</td>
           @if ($m->pdf == null)
             <td>
-              <a href="{{ $m->link }}" class="badge bg-danger"><span class="menu-icon mdi mdi-youtube mdi-24px"></span></a>   
+              <p>null</p>   
             
             </td>
           @else

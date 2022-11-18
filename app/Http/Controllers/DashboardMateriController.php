@@ -84,7 +84,7 @@ class DashboardMateriController extends Controller
             $data->subject = $subject;
             $data->course_id =$course_id;
             
-             if($request->file('pdf')[$key]){
+             if($request->file('pdf')){
              $data->pdf = $request->file('pdf')[$key]->store('course-doc');
             }
 
