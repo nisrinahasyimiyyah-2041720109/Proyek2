@@ -53,6 +53,42 @@ body{
     background-color: rgba(255, 255, 255, 0.373);
     border-radius: 15px;
 }
+
+.Mycourse {
+    background-color: rgba(255, 255, 255, 0.685);
+    border-radius: 0;
+    
+}
+
+i.icon-red{
+    color: red;
+    vertical-align: middle;
+}
+
+i.icon-blue {
+    color: rgb(54, 54, 221);
+    vertical-align: middle;
+}
+
+.pertemuan a{
+    color: rgb(65, 65, 65);   
+}
+
+.pertemuan a:link {
+    text-decoration: none;
+}
+
+.pertemuan a:visited {
+    text-decoration: none;
+}
+
+.pertemuan a:hover {
+    text-decoration: underline;
+}
+
+.pertemuan a:active {
+    text-decoration: none;
+}
 /* 
 .contact h1{
     padding-top: 15px;

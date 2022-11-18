@@ -28,26 +28,13 @@
                     <p><b>Jumlah Pertemuan : </b>{{ $t->course->materi->count()}}</p>
                 </div>
                 <div class="col">
-                    @if ($t->progres == 0)
+                    {{-- @if ($t->progres == 0)
                         <a href="/myCourse/{{ $t->id }}" type="button" class="btn btn-primary my-2">
                             <i class="bi bi-caret-right-square me-1"></i>
                             Get Enroll
                         </a>
                     @elseif ($t->progres == $t->course->materi->count())
                         <h4 style="display:inline-block;  float:left;" class="pt-2 pb-2 me-2"><span class="badge bg-success"><i class="d-inline bi bi-check-circle me-2 "></i>Complete</span><h4>
-                            {{-- <form action="/sertifikat" class="d-inline" >
-                                @csrf
-                                <input type="hidden" name="id" id="id" value="{{ $t->id }}">
-                                <button type="submit" class="btn btn-primary btn-sm my-2 d-inline">
-                                <i class="bi bi-printer"></i>
-                                <b>Certificate</b>
-                            </button>
-                              </form> --}}
-                        {{-- <a href="/sertifikat/{{ $t->id }}" type="button" class="d-inline btn btn-primary btn-sm my-2 ">
-                            <i class="bi bi-printer"></i>
-                            
-                            <b>Certificate</b>
-                        </a> --}}
                         <a href="/reset/{{ $t->id }}" type="button" class="d-inline btn btn-primary btn-sm my-2 ">
                             <i class="bi bi-arrow-repeat"></i>
                             
@@ -59,7 +46,11 @@
                             Continue <span class="badge bg-warning text-black ms-2">{{ ceil( $t->progres / $t->course->materi->count() * 100 ) }}%</span>
                         </a>
                         
-                    @endif
+                    @endif --}}
+                     <a href="/myCourse/{{ $t->id }}" type="button" class="btn btn-primary my-2">
+                            <i class="bi bi-caret-right-square me-1"></i>
+                            Mulai
+                        </a>
                       
                 </div>
             </div>

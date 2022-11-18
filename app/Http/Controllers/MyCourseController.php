@@ -12,7 +12,7 @@ class MyCourseController extends Controller
     {
         $transaksi = Transaksi::where('id', $id)->first();
         $category = Category::all();
-        return view('MyCourse', [
+        return view('MyCourse1', [
             'materi' => $transaksi->course->materi,
             'transaksi' => $transaksi,
             'category' => $category
