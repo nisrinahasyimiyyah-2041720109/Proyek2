@@ -26,7 +26,7 @@
                     </div>
                     <hr>
                     <div>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe eligendi cumque aspernatur voluptatum veniam, amet harum fuga asperiores dolore incidunt quia, reprehenderit, earum aut quo dolorum magnam voluptatem enim tempora!</p>
+                        <p>Halo rekan FAST, Selamat berjumpa pada pembelajaran bimbel FAST. Pada proses pembelajaran diharapkan dapat memberikan pengetahuan dan keterampilan dalam mata pelajaran yang akan di berikan. Pada setiap pertemun rekan-rekan akan diberikan materi dan juga tugas untuk melatih kemampuan kalian semua. </p>
                     </div>
                 </div>
             </div>
@@ -39,6 +39,7 @@
                             @if ($m->pdf == null)
                                 <h4 class="my-3 ms-4 text-secondary">Belum tersedia.</h4>
                             @else
+                            
                                 <a href="{{ asset('storage/' . $m->pdf) }}"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-pdf mdi-36px icon-red me-2"></i>{{ $m->subject }}</h4></a>
                                 <a href=""><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
                             @endif
