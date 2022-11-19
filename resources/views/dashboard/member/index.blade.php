@@ -53,12 +53,12 @@
             
           </td>
           <td>
-            <a href="/admin/member/{{ $u->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a>
-            <a href="/admin/member/{{ $u->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a>
+            <a href="/admin/member/{{ $u->id }}" class="badge bg-info" style="text-decoration: none;">Show</a>
+            <a href="/admin/member/{{ $u->id }}/edit" class="badge bg-warning" style="text-decoration: none;">Edit</a>
             <form action="/admin/member/{{ $u->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
-              <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" ><span class="menu-icon mdi mdi-backspace"></button>
+              <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" >Delete</button>
             </form>
           </td>
         </tr>

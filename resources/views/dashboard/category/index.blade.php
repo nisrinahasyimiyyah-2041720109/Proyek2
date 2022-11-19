@@ -27,12 +27,12 @@
           <td>{{ $loop->iteration }}</td>
           <td>{{ $c->name }}</td>
           <td>
-            {{-- <a href="/admin/kelas/{{ $c->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a> --}}
-            <a href="/admin/kelas/{{ $c->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a>
+            {{-- <a href="/admin/kelas/{{ $c->id }}" class="badge bg-info" style="text-decoration: none;">Show</a> --}}
+            <a href="/admin/kelas/{{ $c->id }}/edit" class="badge bg-warning" style="text-decoration: none;">Edit</a>
             <form action="/admin/kelas/{{ $c->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
-              <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" ><span class="menu-icon mdi mdi-backspace"></button>
+              <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" >Delete</button>
             </form>
           </td>
         </tr>

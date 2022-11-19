@@ -40,12 +40,12 @@
                     <h5 class="card-title">{{ $c->title }}</h5>
                     <p class="card-text">{{ $c->deskripsi }}</p>
                     {{-- <p class="card-text"><small class="text-muted">Last updated {{ $p->created_at->diffForHumans() }}</small></p> --}}
-                    <a href="/admin/course/{{ $c->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a>
-                    <a href="/admin/course/{{ $c->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a>
+                    <a href="/admin/course/{{ $c->id }}" class="badge bg-info" style="text-decoration: none;">Show</a>
+                    <a href="/admin/course/{{ $c->id }}/edit" class="badge bg-warning" style="text-decoration: none;">Edit</a>
                     <form action="/admin/course/{{ $c->id }}" method="post" class="d-inline">
                       @method('delete')
                       @csrf
-                      <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" ><span class="menu-icon mdi mdi-backspace"></button>
+                      <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin ingin menghapus?')" >Delete</button>
                     </form>
                     </div>
                 </div>

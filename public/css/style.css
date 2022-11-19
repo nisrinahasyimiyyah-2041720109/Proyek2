@@ -3,7 +3,7 @@
 }
 
 body{
-	background-image: linear-gradient(rgba(0, 0, 0, 0.322),rgba(0, 0, 0, 0.212)),url(../images/background.png);	
+	background-image: linear-gradient(rgba(0, 0, 0, 0.322),rgba(0, 0, 0, 0.212)),url(../images/bg.webp);	
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-size: cover;
@@ -24,20 +24,22 @@ body{
 .profile h1{
     padding-top: 10%;
     text-align: left;
-    color: #fff;
-    font-size: 60px;
+    color: #ffffff;
+    font-size: 65px;
 	margin-top: 8%;
-    margin-left: 15%;
+    margin-left: 5%;
+    font-family: 'Segoe UI';
+    letter-spacing: 4px;
 }
 
 .profile h3{
 
 	color: #fff;
-	font-size: 30px;
-	font-style: oblique;
+	font-size: 20px;
 	font-weight: lighter;
-	margin-top: 3%;
-    margin-left: 15%;
+	margin-top: 2%;
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profile h4{
