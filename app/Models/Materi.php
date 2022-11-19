@@ -23,7 +23,7 @@ class Materi extends Model
     }
 
     public function tugas(){
-        return $this->hasOne(Tugas::class);
+        return $this->hasMany(Tugas::class);
     
     }
     

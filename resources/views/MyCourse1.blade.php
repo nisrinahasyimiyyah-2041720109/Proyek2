@@ -41,7 +41,7 @@
                             @else
                             
                                 <a href="{{ asset('storage/' . $m->pdf) }}"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-pdf mdi-36px icon-red me-2"></i>{{ $m->subject }}</h4></a>
-                                <a href=""><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
+                                <a href="/tugas/{{ $m->id }}"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
                             @endif
                            
                         </div>

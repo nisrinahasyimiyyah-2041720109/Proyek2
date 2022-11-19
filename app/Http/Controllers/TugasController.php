@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Materi;
+use App\Models\Category;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,23 +11,27 @@ use Illuminate\Support\Facades\Storage;
 
 class TugasController extends Controller
 {
-    public function index()
+    public function index($id)
     {
         
-        if(request('materi_id')){
-            $search=  $tugas = DB::table('tugass');
-            $materi_id = request('materi_id');
-            $search->where('materi_id' , 'Like' , '%' . request('materi_id') . '%');
-            $tugas = $search->get();
-            return view('tugas.index',compact('tugas','materi_id'));
-        }
+        // if(request('materi_id')){
+        //     $search=  $tugas = DB::table('tugass');
+        //     $materi_id = request('materi_id');
+        //     $search->where('materi_id' , 'Like' , '%' . request('materi_id') . '%');
+        //     $tugas = $search->get();
+        //     return view('tugas.index1',compact('tugas','materi_id'));
+        // }
 
         
-            $search=  $tugas = DB::table('tugass');
-            $materi_id = session('materi_id');
-            $search->where('materi_id' , 'Like' , '%' . request('materi_id') . '%');
-            $tugas = $search->get();
-            return view('tugas.index',compact('tugas','materi_id'));
+        //     $search=  $tugas = DB::table('tugass');
+        //     $materi_id = session('materi_id');
+        //     $search->where('materi_id' , 'Like' , '%' . request('materi_id') . '%');
+        //     $tugas = $search->get();
+        //     return view('tugas.index1',compact('tugas','materi_id'));
+        // $materi = Materi::where('id', $id)->first();
+        // return view('tugas.create', [
+        //     'materi' => $materi
+        // ]);
        
     }
 
@@ -54,28 +59,40 @@ class TugasController extends Controller
      */
     public function store(Request $request)
     {
-        $tugas = Tugas::all();
+        // $tugas = Tugas::all();
+        // $materi_id = new \stdClass();
+        // $materi_id = $request->get('materi_id');
+        // $validatedData = $request->validate([
+        //     'materi_id'=>'required',
+        //     'pdf' => 'nullable|mimes:pdf|max:2048'
+            
+        // ]);
+
+        // if($request->file('pdf')){
+        //     $validatedData['pdf'] = $request->file('pdf')->store('tugas-doc');
+        // }
+
+        // Tugas::create($validatedData, ['materi_id' => $validatedData['materi_id']]);
+        // return redirect('/member/tugas')->with('materi_id' , $materi_id)->with('success', 'Tugas berhasil diupload');
+
         $materi_id = new \stdClass();
         $materi_id = $request->get('materi_id');
-        $validatedData = $request->validate([
+        $request->validate([
             'materi_id'=>'required',
-            'pdf' => 'nullable|mimes:pdf|max:2048'
-            
+            'pdf' => 'nullable|mimes:pdf' 
         ]);
+        $tugas = new Tugas();
+        $tugas->materi_id = $request->get('materi_id');
+        $tugas->user_id = $request->user()->id;
 
-        if($request->file('pdf')){
-            $validatedData['pdf'] = $request->file('pdf')->store('tugas-doc');
+        if ($request->file('pdf')) {
+            $tugas->pdf = $request->file('pdf')->store('tugas-doc');
         }
 
-        Tugas::create($validatedData, ['materi_id' => $validatedData['materi_id']]);
+        $tugas->save();
 
-        // return redirect()->route('dashboard.materi.index', compact('course_id'));
-        
-        return redirect('/member/tugas')->with('materi_id' , $materi_id)->with('success', 'Tugas berhasil diupload');
-        // return view('dashboard.materi.index', [
-        //              'materi' => $materi,
-        //              'course_id' => $course_id
-        //              ]);
+        return redirect('/tugas' . '/'. $materi_id );
+
 
     }
 
@@ -85,9 +102,14 @@ class TugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $materi = Materi::where('id', $id)->first();
+        $tugas = Tugas::where('materi_id', $id)->where('user_id', $request->user()->id)->first();
+        return view('tugas.index1', [
+            'materi' => $materi,
+            'tugas' => $tugas
+        ]);
     }
 
     /**
@@ -152,6 +174,6 @@ class TugasController extends Controller
             Storage::delete($tugas->pdf);
         }
         $tugas->delete();
-        return redirect('/member/tugas')->with('materi_id' , $materi_id)->with('success', 'Tugas telah dihapus');
+        return redirect('/tugas' . '/'. $materi_id );
     }
 }

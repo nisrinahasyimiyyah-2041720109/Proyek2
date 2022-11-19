@@ -14,7 +14,7 @@
           Terima kasih telah memesan, silahkan melakukan melakukan pembayaran
         </div>
         <div class="modal-footer">
-            <form method="post" action="/transaksi">
+            <form method="post" action="/tugas">
               @csrf
                 <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
                 <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Apakah anda yakin?')">Bayar Nanti</button>

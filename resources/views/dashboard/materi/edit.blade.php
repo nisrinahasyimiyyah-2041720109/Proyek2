@@ -18,19 +18,8 @@
               </div>
               @enderror
           </div>
-          @if ($materi->pdf == null)
           <div class="mb-3">
-            <label for="link" class="form-label">Link Video Pembelajaran</label>
-            <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" value="{{ old('link', $materi->link) }}">
-              @error('link')
-              <div class="invalid-feedback">
-              {{ $message }}
-              </div>
-              @enderror
-          </div>
-          @else
-          <div class="mb-3">
-            <label for="pdf" class="form-label @error('pdf') is-invalid @enderror">pdf Admin</label>
+            <label for="pdf" class="form-label @error('pdf') is-invalid @enderror">PDF</label>
             <input type="hidden" name="oldpdf" value="{{ $materi->pdf }}">
             @if ($materi->pdf)
             <img src="{{ asset('storage/' . $materi->pdf) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
@@ -44,7 +33,6 @@
             </div>
             @enderror
           </div>
-          @endif
           
          
           

@@ -12,11 +12,16 @@ class Tugas extends Model
 
     protected $fillable = [
         'pdf',
-        'materi_id'
+        'materi_id',
+        'user_id',
+        'nilai'
     ];
 
     public function materi(){
-        return $this->hasOne(Materi::class);
-    
+        return $this->belongsTo(Materi::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

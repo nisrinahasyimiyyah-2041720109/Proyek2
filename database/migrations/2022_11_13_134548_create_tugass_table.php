@@ -16,7 +16,9 @@ class CreateTugassTable extends Migration
         Schema::create('tugass', function (Blueprint $table) {
             $table->id();
             $table->string('pdf')->nullable();
+            $table->string('nilai')->nullable();
             $table->foreignId('materi_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

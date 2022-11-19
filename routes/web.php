@@ -60,7 +60,7 @@ Route::resource('/admin/kelas', DashboardCategoryController::class)->middleware(
 Route::resource('/admin/course', DashboardCourseController::class)->middleware('checkRole:admin');
 Route::resource('/admin/materi', DashboardMateriController::class)->middleware('checkRole:admin');
 
-Route::resource('/member/tugas', TugasController::class);
+Route::resource('/tugas', TugasController::class);
 
 
 // Route::get('/materi/{id}', [DashboardMateriController::class, 'indexMateri']);
