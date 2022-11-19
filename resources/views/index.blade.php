@@ -6,8 +6,8 @@
 <div class="container-fluid p-0 mb-12">
         <div class="owl-carousel header-carousel position-fixed">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="images/background.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <img class="img-fluid image" src="images/background.png" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
@@ -35,11 +35,11 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
 <!-- Carousel End -->
 
-
-<!-- <div class="row">
+{{-- 
+<div class="row">
     <div class="col ">
         <div class="profile">
             <h1 class="fw-bold">FAST</h1>
@@ -64,5 +64,5 @@
             @endauth
         </div>
     </div>
-</div> -->
+</div>  --}}
 @endsection

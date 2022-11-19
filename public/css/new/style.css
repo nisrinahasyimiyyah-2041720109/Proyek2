@@ -5,6 +5,9 @@
     --dark: #181d38;
 }
 
+.image{
+    opacity: 0;
+}
 
 .fw-medium {
     font-weight: 600 !important;

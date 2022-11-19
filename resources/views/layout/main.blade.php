@@ -36,6 +36,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
+<style>
+  body{
+    background-image: linear-gradient(rgba(27, 27, 27, 0.445), rgba(13, 10, 20, 0.76)),url("../images/background.png");
+  }
+</style>
   <body>
 
     @include('layout.navbar')
