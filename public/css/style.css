@@ -86,10 +86,31 @@ i.icon-blue {
 }
 
 .pertemuan a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .pertemuan a:active {
+    text-decoration: none;
+}
+
+.linked a {
+    color: rgb(65, 65, 65);
+}
+
+.linked a:link {
+    text-decoration: none;
+}
+
+.linked a:visited {
+    text-decoration: none;
+}
+
+.linked a:hover {
+    color: rgb(16, 0, 87);
+    text-decoration: underline;
+}
+
+.linked a:active {
     text-decoration: none;
 }
 /* 

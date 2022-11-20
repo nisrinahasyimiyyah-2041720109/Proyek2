@@ -11,6 +11,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card Mycourse"  style="width: 100%;">
             <h2 class="me-3 my-3"> Kelas {{ $transaksi->course->category->name }} : {{ $transaksi->course->title }}</h2>
+            <p class="ms-2 linked"><a href="/">Home</a> / <a href="/courseMember">My Class</a> / <a href="/myCourse/{{ $transaksi->id }}">{{ $transaksi->course->title }}</a></p>
         </div>
     </div>
     <div class="row justify-content-center align-items-center mt-1">
@@ -41,7 +42,12 @@
                             @else
                             
                                 <a href="{{ asset('storage/' . $m->pdf) }}"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-pdf mdi-36px icon-red me-2"></i>{{ $m->subject }}</h4></a>
-                                <a href="/tugas/{{ $m->id }}"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
+                                {{-- <form action="/tugas/{{ $m->id }}" method="get">
+                                    @csrf
+                                    <input type="hidden" name="transaksi_id" id="transaksi_id" value="{{ $transaksi->id }}">
+                                    <button class="my-3 ms-4" type="submit" style="border:none; background: none; padding: 0;"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2 d-inline-block"></i><h4 class="d-inline-block">Tugas</h4></button>
+                                </form> --}}
+                                <a href="/tugas/{{ $m->id }}" type="submit"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
                             @endif
                            
                         </div>

@@ -44,7 +44,7 @@
                 @else
                 <li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/register"><i class="bi bi-box-arrow-down"></i> Register</a>
+                        <a class="nav-link " href="/register"><i class="bi bi-box-arrow-up"></i> Register</a>
                 </li>
                 <li>
                     <li class="nav-item">

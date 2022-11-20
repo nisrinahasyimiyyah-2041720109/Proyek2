@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Dashboard</title>
+  <link rel="shortcut icon" href="/images/logoBiFast.png" />
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('vendors/feather/feather.css') }}">
   <link rel="stylesheet" href="{{ asset('vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -23,7 +24,6 @@
    {{-- Bootstrp Icons --}}
    <link rel="stylesheet" href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css') }}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
 
 {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 

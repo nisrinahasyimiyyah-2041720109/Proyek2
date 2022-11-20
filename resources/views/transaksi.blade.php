@@ -61,7 +61,7 @@
                         <img src="{{ asset('storage/' . $t->course->photo) }}" class="card-img-top" alt="{{ $t->course->title }}">
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 text-dark mt-3">
                     <p><b>Title : </b>{{ $t->course->title }}</p>
                     <p><b>Kelas : </b>{{ $t->course->category->name }}</p>
                     <p><b>Harga : </b>Rp.{{ $t->course->harga }}</p>

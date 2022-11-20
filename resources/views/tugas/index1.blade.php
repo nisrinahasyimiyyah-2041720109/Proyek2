@@ -38,6 +38,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card Mycourse"  style="width: 100%;">
             <h2 class="me-3 my-3"> Kelas {{ $materi->course->category->name }} : {{ $materi->course->title }}</h2>
+            <p class="ms-2 linked"><a href="/">Home</a> / <a href="/courseMember">My Class</a> / <a href="/tugas/{{ $materi->id }}">Tugas {{$materi->subject}}</a></p>
         </div>
     </div>
     <div class="row justify-content-center align-items-center mt-2 mb-3">
@@ -53,10 +54,12 @@
                     </tr>
                     <tr>
                     <th>Status Nilai</th>
-                    @if ($tugas->nilai == null)
+                    @if ($tugas == null)
                         <td>Belum dinilai</td>
                     @else
-                        @if ($tugas->nilai > 60)
+                        @if ($tugas->nilai == null)
+                            <td>Belum dinilai</td>
+                        @elseif ($tugas->nilai > 60)
                             <td class="table-success">{{ $tugas->nilai }} / 100</td>
                         @else
                             <td class="table-danger">{{ $tugas->nilai }} / 100</td>

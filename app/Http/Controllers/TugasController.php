@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Materi;
 use App\Models\Category;
 use App\Models\Tugas;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -104,11 +105,13 @@ class TugasController extends Controller
      */
     public function show(Request $request, $id)
     {
+        // $transaksi = Transaksi::where('id', $transaksi_id)->first();
         $materi = Materi::where('id', $id)->first();
         $tugas = Tugas::where('materi_id', $id)->where('user_id', $request->user()->id)->first();
         return view('tugas.index1', [
             'materi' => $materi,
-            'tugas' => $tugas
+            'tugas' => $tugas,
+            // 'transaksi' => $transaksi
         ]);
     }
 
