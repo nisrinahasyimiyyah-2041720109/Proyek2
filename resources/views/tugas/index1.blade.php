@@ -53,7 +53,17 @@
                     </tr>
                     <tr>
                     <th>Status Nilai</th>
-                    <td>Belum dinilai</td>
+                    @if ($tugas->nilai == null)
+                        <td>Belum dinilai</td>
+                    @else
+                        @if ($tugas->nilai > 60)
+                            <td class="table-success">{{ $tugas->nilai }} / 100</td>
+                        @else
+                            <td class="table-danger">{{ $tugas->nilai }} / 100</td>
+                        @endif
+                        
+                    @endif
+                    
                     </tr>
                     <tr>
                     <th>Status Pengumpulan</th>
