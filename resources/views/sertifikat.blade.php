@@ -23,6 +23,7 @@
            <table class="table table-dark table-striped-columns">
                  <tr class="table-active">
                     <th>ID</th>
+                    <th>Tanggal</th>
                     <th>Member</th>
                     <th>Bimbel</th>
                     <th>Harga</th>
@@ -31,6 +32,7 @@
                 @foreach ($transaksi as $t)
                 <tr>
                     <td>{{ $t->id}}</td>
+                    <td>{{ \Carbon\Carbon::parse($t->created_at)->format('d/m/Y') }}</td>
                     <td>{{ $t->user->name}}</td>
                     <td>{{ $t->course->title}}</td>
                     <td>Rp.{{ $t->course->harga}}</td>

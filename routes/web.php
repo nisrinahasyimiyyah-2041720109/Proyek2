@@ -84,7 +84,7 @@ Route::get('/myCourse/{id}', [MyCourseController::class, 'show']);
 Route::get('/next/{id}', [MyCourseController::class, 'next']);
 Route::get('/reset/{id}', [MyCourseController::class, 'reset']);
 
-Route::get('/sertifikat', [SertifikatController::class, '__invoke']);
+Route::get('/laporanTransaksi', [SertifikatController::class, '__invoke']);
 
 
 

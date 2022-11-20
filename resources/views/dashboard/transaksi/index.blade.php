@@ -8,7 +8,7 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Data Transaksi</h1>
       </div>
-      <a href="/sertifikat" type="button" class="d-inline btn btn-primary btn-sm my-2 ">
+      <a href="/laporanTransaksi" type="button" class="d-inline btn btn-primary btn-sm my-2 ">
         <i class="bi bi-printer"></i>
         <b>Export Transaksi</b>
       </a>
@@ -20,6 +20,7 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">Tanggal</th>
           <th scope="col">Member</th>
           <th scope="col">Bimbel</th>
           <th scope="col">Bukti</th>
@@ -57,6 +58,7 @@
       </div>
         <tr>
           <td>{{ $t->id }}</td>
+          <td>{{ \Carbon\Carbon::parse($t->created_at)->format('d/m/Y') }}</td>
           <td>{{ $t->user->name }}</td>
           <td>{{ $t->course->title }}</td>
           <td>

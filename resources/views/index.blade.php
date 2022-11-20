@@ -21,10 +21,15 @@
                                             <p class="fs-5 text-white mb-4 pb-2">
                                                 Anda belum terdaftar bimbel. Klik menu "Bimbel" untuk memilih kelas bimbel yang tersedia.
                                             </p>
-                                        @else
-                                            <p class="fs-5 text-white mb-4 pb-2">
-                                                Anda telah terdaftar pada bimbel : {{ $transaksi->course->title }}<br>
-                                                Klik menu "My Class" untuk melihat kelas bimbel Anda.
+                                        @else       
+                                            <br><p class="fs-5 text-white mb-4 pb-2">
+                                                Anda telah terdaftar pada bimbel :<br>
+                                                    @foreach ($transaksinew as $t)
+                                                        <ul class="fs-5 text-white mb-4 pb-2">
+                                                            <li>{{ $t->course->title }}</li>
+                                                        </ul>                                                 
+                                                    @endforeach                                                   
+                                                <p class="fs-5 text-white mb-4 pb-2">Klik menu "My Class" untuk melihat kelas bimbel Anda.</p>
                                             </p>
                                         @endif
                                     @endif
