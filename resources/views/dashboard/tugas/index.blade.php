@@ -25,8 +25,10 @@
       </thead>
       <tbody>
         @foreach ($tugas as $t)
-            <!-- Modal -->
-            <div class="modal fade " id="nilaiModal" tabindex="-1" aria-labelledby="nilaiModalLabel" aria-hidden="true">
+
+        <tr>
+                      <!-- Modal -->
+            <div class="modal fade " id="nilaiModal{{ $t->id }}" tabindex="-1" aria-labelledby="nilaiModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -39,6 +41,7 @@
                     <div class="modal-body">
                         Silahkan beri nilai
                         <div class="mb-3">
+                          {{-- <input class="form-control" type="text" id="nilai" name="nilai" value="{{ $t->id }}"> --}}
                             <input class="form-control" type="number" id="nilai" name="nilai">
                             @error('nilai')
                             <div class="invalid-feedback">
@@ -54,7 +57,6 @@
                 </div>
                 </div>
             </div>
-        <tr>
           <td>{{ $t->materi->subject }}</td>
           <td>{{ $t->user->name }}</td>
           <td>
@@ -76,7 +78,7 @@
               <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" >Delete</button>
             </form> --}}
             @if ($t->nilai == null)
-                <button type="button" class="btn btn-sm btn-info text-dark" data-bs-toggle="modal" data-bs-target="#nilaiModal">beri nilai</button>
+                <button type="button" class="btn btn-sm btn-info text-dark" data-bs-toggle="modal" data-bs-target="#nilaiModal{{ $t->id }}">beri nilai</button>
             @else
                 <p class="badge bg-success">Selesai</p>
             @endif
