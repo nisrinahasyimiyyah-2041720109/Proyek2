@@ -26,7 +26,7 @@
                     </div>
                     <hr>
                     <div>
-                        <p>Halo rekan FAST, Selamat berjumpa pada pembelajaran bimbel FAST. Pada proses pembelajaran diharapkan dapat memberikan pengetahuan dan keterampilan dalam mata pelajaran yang akan di berikan. Pada setiap pertemun rekan-rekan akan diberikan materi dan juga tugas untuk melatih kemampuan kalian semua. </p>
+                        <p>Halo rekan FAST, Selamat berjumpa pada pembelajaran bimbel FAST. Pada proses pembelajaran diharapkan dapat memberikan pengetahuan dan keterampilan dalam mata pelajaran yang akan di berikan. Pada setiap pertemuan rekan-rekan akan diberikan materi dan juga tugas untuk melatih kemampuan kalian semua. </p>
                     </div>
                 </div>
             </div>
