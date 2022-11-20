@@ -2,8 +2,7 @@
 @section('content')
    
 <div class="container col-lg-8 mx-5 mt-4">
-  <h2>Basic Table</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
+  <h2>Tambah Materi</h2>
   <form method="post" action="/admin/materi" class="mb-5" enctype="multipart/form-data">
     @csrf
     <div class="form-group-row">
