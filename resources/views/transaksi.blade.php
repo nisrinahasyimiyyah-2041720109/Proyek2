@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 class="my-5 text-center text-light">
-    <b> My Course </b>
+    <b> My Class </b>
 </h1>
 
 @if (session()->has('success'))
