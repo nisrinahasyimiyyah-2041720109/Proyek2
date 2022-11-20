@@ -10,7 +10,7 @@
       </div>
       <a href="/laporanTransaksi" type="button" class="d-inline btn btn-primary btn-sm my-2 ">
         <i class="bi bi-printer"></i>
-        <b>Export Transaksi</b>
+        <b>Cetak Transaksi</b>
       </a>
         @if (session()->has('success'))
       <div class="alert alert-success col-lg-12" role="alert">

@@ -27,7 +27,7 @@
                     </div>
                     <div class="d-none d-md-block">
                       <p class="statistics-title">Bimbel</p>
-                      <h4 class="rate-percentage">{{ $course->count() }} Courses</h4>
+                      <h4 class="rate-percentage">{{ $course->count() }} Subjects</h4>
                       
                     </div>
                     <div class="d-none d-md-block">

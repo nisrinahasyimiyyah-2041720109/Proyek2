@@ -10,7 +10,7 @@
 <div class="container my-3"> 
     <div class="row justify-content-center align-items-center">
         <div class="card Mycourse"  style="width: 100%;">
-            <h2 class="me-3 my-3"> Kelas {{ $transaksi->course->category->name }} : {{ $transaksi->course->title }}</h2>
+            <h2 class="me-3 my-3"> Tingkat {{ $transaksi->course->category->name }} : {{ $transaksi->course->title }}</h2>
             <p class="ms-2 linked"><a href="/">Home</a> / <a href="/courseMember">My Class</a> / <a href="/myCourse/{{ $transaksi->id }}">{{ $transaksi->course->title }}</a></p>
         </div>
     </div>
@@ -23,7 +23,7 @@
                     </div>
                     <hr>
                     <div class="justify-content-center align-items-center">
-                         <h3 class="my-1 text-center"><b> Kelas {{ $transaksi->course->category->name }} : {{ $transaksi->course->title }}</b></h3>
+                         <h3 class="my-1 text-center"><b> Tingkat {{ $transaksi->course->category->name }} : {{ $transaksi->course->title }}</b></h3>
                     </div>
                     <hr>
                     <div>
