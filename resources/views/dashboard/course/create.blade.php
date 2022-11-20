@@ -39,7 +39,7 @@
         </div>
         <div class="mb-3">
                <div class="mb-3">
-          <label for="requirment" class="form-label">Requirement</label>
+          <label for="requirment" class="form-label">Persyaratan</label>
           <input type="text" class="form-control @error('requirment') is-invalid @enderror" id="requirment" name="requirment" value="{{ old('requirment') }}">
             @error('requirment')
             <div class="invalid-feedback">
@@ -48,7 +48,7 @@
             @enderror
         </div>
         <div class="mb-3">
-          <label for="outcome" class="form-label">Outcome</label>
+          <label for="outcome" class="form-label">Hasil Pencapaian</label>
           <input type="text" class="form-control @error('outcome') is-invalid @enderror" id="outcome" name="outcome" value="{{ old('outcome') }}">
             @error('outcome')
             <div class="invalid-feedback">
