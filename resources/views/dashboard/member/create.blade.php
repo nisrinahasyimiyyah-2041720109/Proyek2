@@ -43,7 +43,7 @@
               </div>
               @enderror
           </div>
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label for="photo" class="form-label @error('photo') is-invalid @enderror">Photo Member</label>
             <img class="img-preview img-fluid mb-3 col-sm-5">
             <input class="form-control" type="file" id="photo" name="photo" onchange="previewImage()">
@@ -52,7 +52,7 @@
             {{ $message }}
             </div>
             @enderror
-          </div>
+          </div> --}}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   </div>

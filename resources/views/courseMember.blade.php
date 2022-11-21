@@ -63,7 +63,7 @@
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-            {{$transaksi->links()}}
+            {{-- {{$transaksi->links()}} --}}
         </ul>
     </nav>
 </div>

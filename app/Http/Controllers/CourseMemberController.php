@@ -11,7 +11,7 @@ class CourseMemberController extends Controller
     public function index()
     {
         return view('courseMember',[
-            'transaksi'=> Transaksi::orderBy('progres','asc')->paginate(3),
+            'transaksi'=> Transaksi::all(),
             'category' => Category::all()
         ]);
     }
@@ -19,7 +19,7 @@ class CourseMemberController extends Controller
     public function transaksi()
     {
         return view('transaksi',[
-            'transaksi'=> Transaksi::orderBy('id','desc')->paginate(3),
+            'transaksi'=> Transaksi::all(),
             'category' => Category::all()
         ]);
     }

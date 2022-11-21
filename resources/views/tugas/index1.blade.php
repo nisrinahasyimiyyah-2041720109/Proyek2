@@ -80,7 +80,7 @@
             </table>
             <div class="text-center my-3">
                 @if ($tugas == null)
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tugasModal">Submit</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tugasModal">Upload Tugas</button>
                 @else
                     {{-- <button type="button" class="btn btn-secondary">Edit</button> --}}
                     <form action="/tugas/{{ $tugas->id }}" method="post" class="d-inline">

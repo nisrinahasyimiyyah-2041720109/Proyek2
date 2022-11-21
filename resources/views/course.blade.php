@@ -3,9 +3,13 @@
 @section('content')
 
 <div class="row justify-content-center">
-    <div class="col-md-6 mb-3 mt-5">
+    <div class="col-md-8 mb-5 mt-5">
+      <h1 class="my-4 text-center text-light">
+    <b> Program Bimbingan Belajar </b>
+</h1>
         <form action="/course">
             <div class="input-group mb-4 mt-3">
+             
                 <input type="text" class="form-control" placeholder="Cari Produk" name="search" value="{{ request('search') }}">
                 <button class="btn btn-dark" type="submit">Search</button>
               </div>

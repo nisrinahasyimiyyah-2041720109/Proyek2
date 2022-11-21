@@ -35,7 +35,7 @@
               </div>
               @enderror
           </div>
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label for="photo" class="form-label @error('photo') is-invalid @enderror">Photo Admin</label>
             <input type="hidden" name="oldPhoto" value="{{ $user->photo }}">
             @if ($user->photo)
@@ -50,7 +50,7 @@
             </div>
             @enderror
           </div>
-        
+         --}}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   </div>

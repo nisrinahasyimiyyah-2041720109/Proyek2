@@ -11,13 +11,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Terima kasih telah memesan, silahkan melakukan pembayaran
+          Terima kasih telah mengambil kelas, silahkan melakukan pembayaran
         </div>
         <div class="modal-footer">
-            <form method="post" action="/tugas">
+            <form method="post" action="/transaksi">
               @csrf
                 <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
-                <!-- <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Apakah anda yakin?')">Bayar Nanti</button> -->
+               {{-- <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onclick="return confirm('Apakah anda yakin?')">Bayar Nanti</button> --}}
             </form>
              <button type="button" class="btn btn-primary" value="purchase" id="hide">Bayar Sekarang</button>
         </div>

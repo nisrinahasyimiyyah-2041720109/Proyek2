@@ -9,7 +9,7 @@
         @method('put')
         @csrf
         <div class="mb-3">
-            <label for="title" class="form-label">Nama Member</label>
+            <label for="title" class="form-label">Nama Bimbel</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title', $course->title) }}">
               @error('title')
               <div class="invalid-feedback">
