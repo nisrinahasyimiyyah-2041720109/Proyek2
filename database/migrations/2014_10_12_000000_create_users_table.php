@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('role',['admin','member'])->default('member');
             $table->integer('verify')->default(0);
-            $table->string('photo')->nullable();
+            // $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
