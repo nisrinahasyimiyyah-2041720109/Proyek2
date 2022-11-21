@@ -55,7 +55,7 @@ class TransaksiController extends Controller
 
         $transaksi->save();
 
-        return redirect('/course')->with('success', 'Terima Kasih telah melakukan transaksi, segera melunasi pembayaran!!');
+        return redirect('/course')->with('success', 'Terima Kasih telah melakukan pembayaran');
     }
 
     /**
