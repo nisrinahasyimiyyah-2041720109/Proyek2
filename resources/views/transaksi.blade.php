@@ -34,7 +34,7 @@
                             <form method="post" action="/bayar" enctype="multipart/form-data">
                             @csrf
                             <div class="modal-body">
-                                Silahkan Mengirimkan bukti Transfer
+                                Silahkan Mengirimkan bukti Pembayaran
                                 <div class="mb-3">
                                     <img class="img-preview img-fluid my-3 col-sm-5">
                                     <input type="hidden" name="id" id="id" value="{{ $t->id }}">

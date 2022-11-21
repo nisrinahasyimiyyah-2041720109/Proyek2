@@ -11,7 +11,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Terima kasih telah memesan, silahkan melakukan melakukan pembayaran
+          Terima kasih telah memesan, silahkan melakukan pembayaran
         </div>
         <div class="modal-footer">
             <form method="post" action="/tugas">
@@ -30,7 +30,7 @@
         <form method="post" action="/transaksi" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
-              Silahkan Mengirimkan bukti Transfer
+              Silahkan Mengirimkan Bukti Pembayaran
               <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
               <div class="mb-3">
                 <img class="img-preview img-fluid my-3 col-sm-5">
