@@ -48,10 +48,10 @@
             <h4 class="my-3">Submission Status</h4>
             <table class="table table-striped ">
                 <tbody>
-                    <tr>
+                    {{-- <tr>
                     <th class="col-2">Status Tugas</th>
                     <td class="col-8">Untuk dinilai</td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                     <th>Status Nilai</th>
                     @if ($tugas == null)
