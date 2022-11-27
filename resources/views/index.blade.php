@@ -13,12 +13,15 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Lembaga Bimbingan Belajar Terbaik</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Fantastic Smart Institute</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Fantastic Smart Institute merupakan lembaga bimbingan belajar untuk siswa SD
-                                hingga SMP yang berada di Kecamatan Kedungpring, Kabupaten Lamongan, Jawa Timur</p>
+                                @if(auth()->check() == 0)
+                                    <p class="fs-5 text-white mb-4 pb-2">Fantastic Smart Institute merupakan lembaga bimbingan belajar untuk siswa SD
+                                    hingga SMP yang berada di Kecamatan Kedungpring, Kabupaten Lamongan, Jawa Timur</p>
+                                @endif
+                                
                                 @auth
                                     @if(auth()->user()->role == "member" )
                                         @if(auth()->user()->transaksi->count() == 0)
-                                            <p class="fs-5 text-white mb-4 pb-2">
+                                            <p class="fs-5 mb-4 pb-2 landing-page">
                                                 Anda belum terdaftar bimbel. Klik menu "Bimbel" untuk memilih kelas bimbel yang tersedia.
                                             </p>
                                         @else       
@@ -29,7 +32,7 @@
                                                             <li>{{ $t->course->title }}</li>
                                                         </ul>                                                 
                                                     @endforeach                                                   
-                                                <p class="fs-5 text-white mb-4 pb-2">Klik menu "My Class" untuk melihat kelas bimbel Anda.</p>
+                                                <p class="fs-5 mb-4 pb-2 landing-page">Klik menu "My Class" untuk melihat kelas bimbel Anda.</p>
                                             </p>
                                         @endif
                                     @endif

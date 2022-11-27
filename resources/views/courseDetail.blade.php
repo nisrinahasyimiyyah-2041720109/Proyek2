@@ -51,7 +51,7 @@
   </div>
 
 <h1 class="mt-3 mb-3 text-center text-light">
-    <b> Bimbel Detail </b>
+    <b>Detail Bimbingan Belajar</b>
 </h1>
 
 <div class="container mt-3 mb-3">

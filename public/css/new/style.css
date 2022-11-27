@@ -25,6 +25,16 @@
     z-index: 99;
 }
 
+.landing-page {
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    opacity: 65%;
+    padding: 15px;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 25px;
+}
 
 /*** Spinner ***/
 #spinner {
