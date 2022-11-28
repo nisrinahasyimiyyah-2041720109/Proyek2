@@ -7,7 +7,13 @@
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
         <h1 class="h2">Data Bimbel</h1>
-      </div>
+    </div>
+    <form action="/admin/course">
+            <div class="input-group w-100 mb-3">        
+                <input type="text" class="form-control w-60 d-inline" placeholder="Cari Bimbel" name="search" value="{{ request('search') }}">
+                <button class="btn btn-dark" type="submit">Search</button>
+            </div>
+    </form>
         @if (session()->has('successAdd'))
       {{-- <div class="alert alert-success col-lg-12" role="alert">
         {{ session('success') }}
@@ -51,6 +57,7 @@
                 </div>
             </div>
         @endforeach
+        
         <div class="d-flex justify-content-center">
         </div>
         <div id="myModal" class="modal fade ">
@@ -89,6 +96,8 @@
               </div>
           </div>
         </div>
+        @else
+          <p class="text-center fs-4">Bimbel tidak ditemukan.</p>
         @endif 
     </div>
    

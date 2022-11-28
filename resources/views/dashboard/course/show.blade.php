@@ -14,8 +14,8 @@
                     <li class="list-group-item"><b>Title Bimbel :  </b>{{ $course->title }}</li>
                     <li class="list-group-item"><b>Deskripsi Singkat :  </b>{{ $course->deskripsi }}</li>
                     <li class="list-group-item"><b>Kelas : </b>{{ $course->category->name }}</li> 
-                    <li class="list-group-item"><b>Requirment : </b>{{ $course->requirment }}</li>
-                    <li class="list-group-item"><b>Outcome : </b>{{ $course->outcome }}</li>
+                    <li class="list-group-item"><b>Persyaratan : </b>{{ $course->requirment }}</li>
+                    <li class="list-group-item"><b>Hasil Pencapaian : </b>{{ $course->outcome }}</li>
                     <li class="list-group-item"><b>Harga : </b>Rp.{{ $course->harga }}</li>
                     <li class="list-group-item"><b>Pertemuan : </b>
                         <form action="/admin/materi" class="d-inline mx-3">

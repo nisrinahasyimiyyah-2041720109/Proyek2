@@ -22,6 +22,14 @@ class DashboardCourseController extends Controller
 
         $course = Course::with('category')->get();
         // $course = Course::all();
+        if(request('search')){
+            $course = Course::where('title', 'like' , '%' . request('search') . '%')
+                     ->orWhere('deskripsi', 'like' , '%' . request('search') . '%')
+                     ->orWhere('category_id', request('search'))
+                     ->paginate(7);
+            return view('dashboard.course.index', compact('course'))->with('i', (request()
+                     ->input('page', 1) - 1) * 5);
+        }
         return view('dashboard.course.index', compact('course'))->with('i', (request()
             ->input('page', 1) - 1) * 5);
     }
