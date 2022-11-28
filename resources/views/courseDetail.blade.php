@@ -11,7 +11,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Terima kasih telah mengambil kelas, silahkan melakukan pembayaran
+          Terima kasih telah mengambil kelas.<br>
+          Pembayaran secara tunai dapat datang langsung ke tempat bimbingan belajar Fast<br><br>
+          Pembayaran secara transfer dapat dilakukan melalui nomor rekening berikut:<br>
+          BRI : 6287 0100 5040 530 (a/n SABELA FURI ASTARI S)
         </div>
         <div class="modal-footer">
             <form method="post" action="/transaksi">
@@ -30,7 +33,9 @@
         <form method="post" action="/transaksi" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
-              Silahkan Mengirimkan Bukti Pembayaran
+              Silahkan Mengirimkan Bukti Pembayaran<br><br>
+              <b>Pembayaran secara tunai berupa nota/kwitansi pembayaran</b><br>
+              <b>Pembayaran secara transfer berupa bukti transfer</b>
               <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
               <div class="mb-3">
                 <img class="img-preview img-fluid my-3 col-sm-5">

@@ -16,6 +16,7 @@
       @endif
       <thead>
         <tr>
+          <th scope="col">Bimbel</th>
           <th scope="col">Subject</th>
           <th scope="col">Nama Member</th>
           <th scope="col">Tugas</th>
@@ -57,6 +58,7 @@
                 </div>
                 </div>
             </div>
+          <td>{{ $t->materi->course->title }}</td>
           <td>{{ $t->materi->subject }}</td>
           <td>{{ $t->user->name }}</td>
           <td>

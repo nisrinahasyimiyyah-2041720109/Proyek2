@@ -6,7 +6,7 @@
 <div class="container-fluid p-0 mb-12">
         <div class="owl-carousel header-carousel position-fixed">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid image" src="images/background.png" alt="">
+                <img class="img-fluid image" src="{{ asset('images/background.png') }}" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
