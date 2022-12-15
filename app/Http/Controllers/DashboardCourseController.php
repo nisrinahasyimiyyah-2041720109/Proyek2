@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Google\Cloud\Storage\StorageClient;
 
 
 class DashboardCourseController extends Controller
@@ -66,10 +67,48 @@ class DashboardCourseController extends Controller
             
         ]);
 
-        if($request->file('photo')){
-            $validatedData['photo'] = $request->file('photo')->store('course-img');
-        }
+        // if($request->file('photo')){
+        //     $validatedData['photo'] = $request->file('photo')->store('course-img');
+        // }
         
+        if($request->file('photo')){
+            $gambar_name = $request->file('photo');
+            $storage = new StorageClient([
+                'keyFilePath' => public_path('key.json')
+            ]);
+
+            $bucketName = env('GOOGLE_CLOUD_BUCKET');
+            $bucket = $storage->bucket($bucketName);
+
+            //get filename with extension
+            $filenamewithextension = pathinfo($request->file('photo')->getClientOriginalName(), PATHINFO_FILENAME);
+            // $filenamewithextension = $request->file('gambar')->getClientOriginalName();
+
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+
+            //get file extension
+            $extension = $request->file('photo')->getClientOriginalExtension();
+
+            //filename to store
+            $filenametostore = $filename . '_' . uniqid() . '.' . $extension;
+
+            Storage::put('storage/uploads/' . $filenametostore, fopen($request->file('photo'), 'r+'));
+
+            $filepath = storage_path('app/public/uploads/' . $filenametostore);
+
+            $object = $bucket->upload(
+                fopen($filepath, 'r'),
+                [
+                    'predefinedAcl' => 'publicRead'
+                ]
+            );
+
+            // delete file from local disk
+            Storage::delete('public/uploads/' . $filenametostore);
+            $validatedData['photo'] = $filenametostore;
+        }
+
         Course::create($validatedData);
         
         return redirect('/admin/course')->with('successAdd', 'Course baru telah ditambahkan');
