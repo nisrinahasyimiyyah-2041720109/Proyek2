@@ -10,7 +10,7 @@
           <h5 class="modal-title" id="tugasModalLabel">Pengumpulan Tugas</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="post" action="/tugas" enctype="multipart/form-data">
+        <form method="post" action="/tugasMember" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
               Silahkan kumpulkan file tugas
@@ -38,7 +38,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card Mycourse"  style="width: 100%;">
             <h2 class="me-3 my-3"> Kelas {{ $materi->course->category->name }} : {{ $materi->course->title }}</h2>
-            <p class="ms-2 linked"><a href="/">Home</a> / <a href="/courseMember">My Class</a> / <a href="/tugas/{{ $materi->id }}">Tugas {{$materi->subject}}</a></p>
+            <p class="ms-2 linked"><a href="/">Home</a> / <a href="/courseMember">My Class</a> / <a href="/tugasMember/{{ $materi->id }}">Tugas {{$materi->subject}}</a></p>
         </div>
     </div>
     <div class="row justify-content-center align-items-center mt-2 mb-3">
@@ -83,7 +83,7 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tugasModal">Upload Tugas</button>
                 @else
                     {{-- <button type="button" class="btn btn-secondary">Edit</button> --}}
-                    <form action="/tugas/{{ $tugas->id }}" method="post" class="d-inline">
+                    <form action="/tugasMember/{{ $tugas->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <input type="hidden" name="materi_id" id="materi_id" value="{{ $materi->id }}">

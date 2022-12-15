@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class DashboardUserController extends Controller
@@ -15,7 +16,12 @@ class DashboardUserController extends Controller
      */
     public function index()
     {
-        $user = User::paginate(5);
+        // $user = User::paginate(5);
+        // $user = DB::table('users')
+        //             ->paginate(7)
+        //             ->orderByDesc('id')->get();
+        $user = User::select("*")
+                    ->orderBy("id", "desc")->paginate(7);
         return view('dashboard.member.index', compact('user'));
     }
 

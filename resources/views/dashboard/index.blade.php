@@ -39,7 +39,7 @@
                 </div>
               </div> 
                 <div>
-                  <img src="{{ asset('images\thumbnail.png') }}" height="auto" width="100%">
+                  <img src="{{ asset('images\thumbnail.webp') }}" height="auto" width="100%">
                 </div>
             </div>
           </div>

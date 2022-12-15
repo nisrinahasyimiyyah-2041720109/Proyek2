@@ -19,7 +19,7 @@
             <div class="row justify-content-center align-items-center my-2">
                 <div class="card "  style="width: 95%; border-radius:10px">
                     <div style="width:100%; display: block; margin-left: auto; margin-right: auto;  overflow:hidden" class="my-2">
-                        <img src="{{ asset('images/thumbnail.png') }}" class="card-img-top" alt="{{ $transaksi->course->title }}">
+                        <img src="{{ asset('images/thumbnail.webp') }}" class="card-img-top" alt="{{ $transaksi->course->title }}">
                     </div>
                     <hr>
                     <div class="justify-content-center align-items-center">
@@ -42,12 +42,12 @@
                             @else
                             
                                 <a href="{{ asset('storage/' . $m->pdf) }}"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-pdf mdi-36px icon-red me-2"></i>{{ $m->subject }}</h4></a>
-                                {{-- <form action="/tugas/{{ $m->id }}" method="get">
+                                {{-- <form action="/tugasMember/{{ $m->id }}" method="get">
                                     @csrf
                                     <input type="hidden" name="transaksi_id" id="transaksi_id" value="{{ $transaksi->id }}">
                                     <button class="my-3 ms-4" type="submit" style="border:none; background: none; padding: 0;"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2 d-inline-block"></i><h4 class="d-inline-block">Tugas</h4></button>
                                 </form> --}}
-                                <a href="/tugas/{{ $m->id }}" type="submit"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
+                                <a href="/tugasMember/{{ $m->id }}" type="submit"><h4 class="my-3 ms-4"><i class="menu-icon mdi mdi-file-send mdi-36px icon-blue me-2"></i>Tugas</h4></a>
                             @endif
                            
                         </div>

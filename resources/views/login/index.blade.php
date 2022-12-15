@@ -14,7 +14,7 @@
         <script>
           $(document).ready(function(){
             $(".modal-title").text("{{ session('success') }}");
-            $(".modal-body p").text("Silahkan hubungi administrator untuk aktivasi akun anda agar bisa masuk");
+            $(".modal-body p").text("Dimohon Menunggu Verifikasi Akun Dari Admin Maksimal 1x24 Jam");
             $("#myModalSuccess").modal('show');
           });
         </script>
