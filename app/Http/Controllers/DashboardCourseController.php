@@ -72,41 +72,20 @@ class DashboardCourseController extends Controller
         // }
         
         if($request->file('photo')){
-            $gambar_name = $request->file('photo');
+            $validatedData['photo'] = $request->file('photo')->store('course-img');
+            $image = $request->file('photo')->store('course-img');
+            $googleConfigFile = file_get_contents(config_path('key.json'));
             $storage = new StorageClient([
-                'keyFilePath' => public_path('key.json')
+                'keyFile' => json_decode($googleConfigFile, true)
             ]);
 
-            $bucketName = env('GOOGLE_CLOUD_BUCKET');
-            $bucket = $storage->bucket($bucketName);
-
-            //get filename with extension
-            $filenamewithextension = pathinfo($request->file('photo')->getClientOriginalName(), PATHINFO_FILENAME);
-            // $filenamewithextension = $request->file('gambar')->getClientOriginalName();
-
-            //get filename without extension
-            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-
-            //get file extension
-            $extension = $request->file('photo')->getClientOriginalExtension();
-
-            //filename to store
-            $filenametostore = $filename . '_' . uniqid() . '.' . $extension;
-
-            Storage::put('storage/uploads/' . $filenametostore, fopen($request->file('photo'), 'r+'));
-
-            $filepath = storage_path('app/public/uploads/' . $filenametostore);
-
-            $object = $bucket->upload(
-                fopen($filepath, 'r'),
-                [
-                    'predefinedAcl' => 'publicRead'
-                ]
-            );
-
-            // delete file from local disk
-            Storage::delete('public/uploads/' . $filenametostore);
-            $validatedData['photo'] = $filenametostore;
+            $storageBucketName = config('googlecloud.storage_bucket');
+                $bucket = $storage->bucket($storageBucketName);
+                $fileSource = fopen(storage_path('/app/public/'. $image), 'r');
+                $bucket->upload($fileSource, [
+                        'predefinedAcl' => 'publicRead',
+                        'name' => $image
+            ]);
         }
 
         Course::create($validatedData);
@@ -172,6 +151,18 @@ class DashboardCourseController extends Controller
                 Storage::delete($request->oldPhoto);
             }
             $course->photo = $request->file('photo')->store('course-img');
+            $googleConfigFile = file_get_contents(config_path('key.json'));
+            $image = $request->file('photo')->store('course-img');    
+                $storage = new StorageClient([
+                        'keyFile' => json_decode($googleConfigFile, true)
+                ]);
+                $storageBucketName = config('googlecloud.storage_bucket');
+                $bucket = $storage->bucket($storageBucketName);
+                $fileSource = fopen(public_path('/storage/'. $image), 'r');
+                $bucket->upload($fileSource, [
+                        'predefinedAcl' => 'publicRead',
+                        'name' => $image
+                ]);
         }
         
         $course->save();
@@ -189,7 +180,17 @@ class DashboardCourseController extends Controller
     {
         $course = Course::where('id', $id)->first();
         if($course->photo){
-            Storage::delete($course->photo);
+            $storage = new StorageClient([
+                'keyFilePath' => public_path('key.json')
+            ]);
+
+            $bucketName = env('GOOGLE_CLOUD_STORAGE_BUCKET');
+            $bucket = $storage->bucket($bucketName);
+            $object = $bucket->object($course->photo);
+    
+    
+    
+            $object->delete();
         }
         $course->delete();
         return redirect('/admin/course')->with('success', 'Course telah dihapus');
