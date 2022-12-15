@@ -92,7 +92,7 @@ class TugasController extends Controller
 
         $tugas->save();
 
-        return redirect('/tugas' . '/'. $materi_id );
+        return redirect('/tugasMember' . '/'. $materi_id );
 
 
     }
@@ -177,6 +177,6 @@ class TugasController extends Controller
             Storage::delete($tugas->pdf);
         }
         $tugas->delete();
-        return redirect('/tugas' . '/'. $materi_id );
+        return redirect('/tugasMember' . '/'. $materi_id );
     }
 }

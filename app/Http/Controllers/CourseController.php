@@ -17,11 +17,11 @@ class CourseController extends Controller
             $course = Course::where('title', 'like' , '%' . request('search') . '%')
                      ->orWhere('deskripsi', 'like' , '%' . request('search') . '%')
                      ->orWhere('category_id', request('search'))
-                     ->paginate(7);
+                     ->paginate(9);
             return view('course', compact('course', 'category'));
         }
 
-        $course = Course::paginate(7);
+        $course = Course::paginate(9);
         return view('course', compact('course', 'category'));
     }
 

@@ -2,6 +2,7 @@
 
 use App\Http\Models\User;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
@@ -35,6 +36,11 @@ use App\Http\Controllers\TugasController;
 
 Route::get('/', [IndexController::class, 'index']);
 
+Route::get('/migration', function () {
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
+});
+
 Route::get('/home', [IndexUserController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('checkRole:admin');
@@ -62,7 +68,7 @@ Route::resource('/admin/course', DashboardCourseController::class)->middleware('
 Route::resource('/admin/materi', DashboardMateriController::class)->middleware('checkRole:admin');
 Route::resource('/admin/tugas', DashboardTugasController::class)->middleware('checkRole:admin');
 
-Route::resource('/tugas', TugasController::class);
+Route::resource('/tugasMember', TugasController::class);
 
 
 // Route::get('/materi/{id}', [DashboardMateriController::class, 'indexMateri']);
